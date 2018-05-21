@@ -34,7 +34,7 @@ class LinearClassifier(object):
         # Run stochastic gradient descent to optimize W
         loss_history = []
         for it in range(num_iters):
-            loss_history.append(self.step(X, y, learning_rate=1e-3, reg=1e-5, batch_size=200)[0])
+            loss_history.append(self.step(X, y, learning_rate=learning_rate, reg=reg, batch_size=batch_size)[0])
 
             if verbose and it % 100 == 0:
                 print('iteration %d / %d: loss %f' % (it, num_iters, loss_history[-1]))
