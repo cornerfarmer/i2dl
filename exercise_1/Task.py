@@ -5,6 +5,7 @@ from exercise_code.data_utils import load_CIFAR10
 import numpy as np
 from exercise_code.classifiers.softmax import SoftmaxClassifier
 import tensorflow as tf
+import pickle
 
 class Task(TaskPlan.Task):
 
@@ -50,7 +51,7 @@ class Task(TaskPlan.Task):
         self.X_test -= mean_image
 
     def save(self, path):
-        pass
+        pickle.dump(self.softmax, open(str(path / 'softmax_classifier.p'), 'wb'))
 
     def step(self, tensorboard_writer, current_iteration):
         loss, acc = self.softmax.step(self.X_train, self.y_train, learning_rate=self.preset.get_float('learning_rate'), reg=self.preset.get_float('reg'), batch_size=self.preset.get_int('batch_size'))
@@ -62,5 +63,4 @@ class Task(TaskPlan.Task):
         tensorboard_writer.add_summary(tf.Summary(value=[tf.Summary.Value(tag="accuracy/val", simple_value=np.mean(self.y_val == y_val_pred))]), current_iteration)
 
     def load(self, path):
-        pass
-
+        self.softmax = pickle.load(open(str(path /  'softmax_classifier.p'), 'rb'))
