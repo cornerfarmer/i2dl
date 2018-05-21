@@ -125,7 +125,7 @@ def cross_entropoy_loss_vectorized(W, X, y, reg):
     
     y_one_hot = np.eye(W.shape[1])[y]
     loss = np.mean(np.sum(-y_one_hot * np.log(y_act), -1))
-    loss += reg * np.sum(W ** 2) / (W.shape[0] * W.shape[1])
+    loss += reg * np.sum(W ** 2)
     
     dLoss = y_one_hot * -1 / y_act
     dLoss /= y.shape[0]
