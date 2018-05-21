@@ -50,6 +50,10 @@ class Task(TaskPlan.Task):
         self.X_val -= mean_image
         self.X_test -= mean_image
 
+        self.X_train = np.hstack([self.X_train, np.ones((self.X_train.shape[0], 1))])
+        self.X_val = np.hstack([self.X_val, np.ones((self.X_val.shape[0], 1))])
+        self.X_test = np.hstack([self.X_test, np.ones((self.X_test.shape[0], 1))])
+
     def save(self, path):
         pickle.dump({'softmax_classifier': self.softmax}, open(str(path / 'softmax_classifier.p'), 'wb'))
 
