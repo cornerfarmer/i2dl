@@ -63,7 +63,7 @@ def cross_entropoy_loss_naive(W, X, y, reg):
     for i in range(W.shape[0]):
         for j in range(W.shape[1]):
             w_sum += W[i][j] ** 2
-    loss += reg * w_sum / (W.shape[0] * W.shape[1])
+    loss += reg * w_sum
     
     dLoss = np.zeros_like(y)
     for t in range(y.shape[0]):
@@ -99,7 +99,7 @@ def cross_entropoy_loss_naive(W, X, y, reg):
     
     for i in range(W.shape[0]):
         for j in range(W.shape[1]):
-            dW[i][j] += reg * 2 / (W.shape[0] * W.shape[1]) * W[i][j]
+            dW[i][j] += reg * 2 * W[i][j]
 
     #############################################################################
     #                          END OF YOUR CODE                                 #
@@ -136,7 +136,7 @@ def cross_entropoy_loss_vectorized(W, X, y, reg):
        
     
     dW = np.matmul(np.transpose(X), dY)
-    dW += reg * 2 / (W.shape[0] * W.shape[1]) * W
+    dW += reg * 2 * W
 
     acc = np.mean(y == y_pred)
 
