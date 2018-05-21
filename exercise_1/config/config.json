@@ -1,13 +1,13 @@
 [
   {
+    "abstract": true,
     "uuid": "9473421e-91be-49cb-8bdf-909f9c876363",
     "name": "Default",
     "config": {
       "batch_size": 200,
-      "learning_rate": 1e-07,
-      "reg": 50000.0
-    },
-    "abstract": true
+      "reg": 50000.0,
+      "learning_rate": 1e-07
+    }
   },
   {
     "uuid": "f82d6508-f72c-48ae-abb4-d7d292287800",

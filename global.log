@@ -78,3 +78,11 @@
 [2018-05-21 23:05:57,876][INFO][general] The task "Exercise 1: Basic (try 0)" has been started, beginning with iteration 0
 [2018-05-21 23:06:42,645][INFO][general] The task "Exercise 1: Basic (try 0)" has been finished after 100 finished iterations
 [2018-05-21 23:06:47,058][INFO][general] Starting tensorboard for project "Exercise 1"...
+[2018-05-21 23:39:04,083][INFO][general] --------------------------------------------------
+[2018-05-21 23:39:52,795][INFO][general] The task "Exercise 1: Basic (try 1)" has been added to queue
+[2018-05-21 23:39:52,861][INFO][general] The task "Exercise 1: Basic (try 1)" has been started, beginning with iteration 0
+[2018-05-21 23:41:06,708][INFO][general] The task "Exercise 1: Basic (try 1)" has been finished after 10 finished iterations
+[2018-05-21 23:41:28,190][INFO][general] The task "Exercise 1: Basic (try 1)" has been added to queue
+[2018-05-21 23:41:28,273][INFO][general] The task "Exercise 1: Basic (try 1)" has been started, beginning with iteration 10
+[2018-05-21 23:42:30,821][INFO][general] The task "Exercise 1: Basic (try 1)" has been finished after 20 finished iterations
+[2018-05-21 23:42:45,140][INFO][general] Starting tensorboard for project "Exercise 1"...
