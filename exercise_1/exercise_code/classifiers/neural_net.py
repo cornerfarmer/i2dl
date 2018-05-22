@@ -90,6 +90,7 @@ class TwoLayerNet(object):
         if y is None:
             return scores
 
+        acc = (np.argmax(scores, -1) == y).mean()
         # Compute the loss
         loss = None
         ########################################################################
@@ -130,7 +131,7 @@ class TwoLayerNet(object):
         #                              END OF YOUR CODE                        #
         ########################################################################
 
-        return loss, grads
+        return loss, acc, grads
 
     def train(self, X, y, X_val, y_val,
               learning_rate=1e-3, learning_rate_decay=0.95,
@@ -163,35 +164,8 @@ class TwoLayerNet(object):
         val_acc_history = []
 
         for it in range(num_iters):
-            X_batch = None
-            y_batch = None
-
-            ####################################################################
-            # TODO: Create a random minibatch of training data and labels,     #
-            # storing hem in X_batch and y_batch respectively.                 #
-            ####################################################################
-            indx = np.random.choice(X.shape[0], batch_size)
-            X_batch = X[indx]
-            y_batch = y[indx]
-            ####################################################################
-            #                             END OF YOUR CODE                     #
-            ####################################################################
-
-            # Compute loss and gradients using the current minibatch
-            loss, grads = self.loss(X_batch, y=y_batch, reg=reg)
+            loss, acc = self.step(X, y, learning_rate, reg, batch_size)
             loss_history.append(loss)
-
-            ####################################################################
-            # TODO: Use the gradients in the grads dictionary to update the    #
-            # parameters of the network (stored in the dictionary self.params) #
-            # using stochastic gradient descent. You'll need to use the        #
-            # gradients stored in the grads dictionary defined above.          #
-            ####################################################################
-            for param in self.params.keys():
-                self.params[param] -= grads[param] * learning_rate
-            ####################################################################
-            #                             END OF YOUR CODE                     #
-            ####################################################################
 
             if verbose and it % 100 == 0:
                 print('iteration %d / %d: loss %f' % (it, num_iters, loss))
@@ -199,7 +173,7 @@ class TwoLayerNet(object):
             # Every epoch, check train and val accuracy and decay learning rate.
             if it % iterations_per_epoch == 0:
                 # Check accuracy
-                train_acc = (self.predict(X_batch) == y_batch).mean()
+                train_acc = acc
                 val_acc = (self.predict(X_val) == y_val).mean()
                 train_acc_history.append(train_acc)
                 val_acc_history.append(val_acc)
@@ -212,6 +186,41 @@ class TwoLayerNet(object):
             'train_acc_history': train_acc_history,
             'val_acc_history': val_acc_history,
         }
+
+    def step(self, X, y,
+              learning_rate=1e-3,
+              reg=1e-5,
+              batch_size=200):
+        X_batch = None
+        y_batch = None
+
+        ####################################################################
+        # TODO: Create a random minibatch of training data and labels,     #
+        # storing hem in X_batch and y_batch respectively.                 #
+        ####################################################################
+        indx = np.random.choice(X.shape[0], batch_size)
+        X_batch = X[indx]
+        y_batch = y[indx]
+        ####################################################################
+        #                             END OF YOUR CODE                     #
+        ####################################################################
+
+        # Compute loss and gradients using the current minibatch
+        loss, acc, grads = self.loss(X_batch, y=y_batch, reg=reg)
+
+        ####################################################################
+        # TODO: Use the gradients in the grads dictionary to update the    #
+        # parameters of the network (stored in the dictionary self.params) #
+        # using stochastic gradient descent. You'll need to use the        #
+        # gradients stored in the grads dictionary defined above.          #
+        ####################################################################
+        for param in self.params.keys():
+            self.params[param] -= grads[param] * learning_rate
+        ####################################################################
+        #                             END OF YOUR CODE                     #
+        ####################################################################
+
+        return loss, acc
 
     def predict(self, X):
         """
@@ -261,7 +270,7 @@ def neuralnetwork_hyperparameter_tuning(X_train, y_train, X_val, y_val):
     f, (ax1, ax2) = plt.subplots(2, 1)
 
     batch_size = 200
-    num_iters = 4q0000
+    num_iters = 40000
     learning_rate = 1e-3
     hidden_size = 512
     learning_rate_decay = 1

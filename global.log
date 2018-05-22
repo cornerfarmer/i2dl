@@ -86,3 +86,24 @@
 [2018-05-21 23:41:28,273][INFO][general] The task "Exercise 1: Basic (try 1)" has been started, beginning with iteration 10
 [2018-05-21 23:42:30,821][INFO][general] The task "Exercise 1: Basic (try 1)" has been finished after 20 finished iterations
 [2018-05-21 23:42:45,140][INFO][general] Starting tensorboard for project "Exercise 1"...
+[2018-05-22 16:51:09,190][INFO][general] --------------------------------------------------
+[2018-05-22 16:52:44,376][INFO][general] --------------------------------------------------
+[2018-05-22 16:52:57,526][INFO][general] Preset "empty" has been added
+[2018-05-22 16:53:01,342][INFO][general] The task "Exercise 1.2: empty (try 0)" has been added to queue
+[2018-05-22 16:53:01,348][INFO][general] The task "Exercise 1.2: empty (try 0)" has been started, beginning with iteration 0
+[2018-05-22 16:53:01,699][ERROR][general] The task "Exercise 1.2: empty (try 0)" has been stopped due to an error after 0 finished iterations
+[2018-05-22 16:57:58,378][INFO][general] The task "Exercise 1.2: empty (try 0)" has been added to queue
+[2018-05-22 16:57:58,383][INFO][general] The task "Exercise 1.2: empty (try 0)" has been started, beginning with iteration 0
+[2018-05-22 16:57:58,678][ERROR][general] The task "Exercise 1.2: empty (try 0)" has been stopped due to an error after 0 finished iterations
+[2018-05-22 16:58:07,802][INFO][general] The task "Exercise 1.2: empty (try 0)" has been added to queue
+[2018-05-22 16:58:07,809][INFO][general] The task "Exercise 1.2: empty (try 0)" has been started, beginning with iteration 0
+[2018-05-22 16:58:11,376][ERROR][general] The task "Exercise 1.2: empty (try 0)" has been stopped due to an error after 0 finished iterations
+[2018-05-22 16:59:23,113][INFO][general] The task "Exercise 1.2: empty (try 0)" has been added to queue
+[2018-05-22 16:59:23,119][INFO][general] The task "Exercise 1.2: empty (try 0)" has been started, beginning with iteration 0
+[2018-05-22 16:59:33,876][INFO][general] The task "Exercise 1.2: empty (try 0)" has been finished after 100 finished iterations
+[2018-05-22 16:59:35,485][INFO][general] Starting tensorboard for project "Exercise 1.2"...
+[2018-05-22 17:00:22,895][INFO][general] Preset "learning_rate: 0.0001" has been added
+[2018-05-22 17:00:40,944][INFO][general] Preset "learning_rate: 0.0001" has been changed
+[2018-05-22 17:00:50,537][INFO][general] Preset "learning_rate: 0.001" has been changed
+[2018-05-22 17:00:56,627][INFO][general] The task "Exercise 1.2: learning_rate: 0.001 (try 0)" has been added to queue
+[2018-05-22 17:00:56,632][INFO][general] The task "Exercise 1.2: learning_rate: 0.001 (try 0)" has been started, beginning with iteration 0
