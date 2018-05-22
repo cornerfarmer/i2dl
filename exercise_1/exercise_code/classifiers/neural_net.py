@@ -1,7 +1,7 @@
 """Two Layer Network."""
 # pylint: disable=invalid-name
 import numpy as np
-
+import matplotlib.pyplot as plt
 
 class TwoLayerNet(object):
     """
@@ -78,7 +78,10 @@ class TwoLayerNet(object):
         # input. Store the result in the scores variable, which should be an   #
         # array of shape (N, C).                                               #         
         ########################################################################
-
+        h1 = np.matmul(X, W1) + b1
+        h1 = h1 * (h1 > 0)
+        h2 = np.matmul(h1, W2) + b2
+        scores = h2
         ########################################################################
         #                              END OF YOUR CODE                        #
         ########################################################################
@@ -96,7 +99,12 @@ class TwoLayerNet(object):
         # Softmax classifier loss. So that your results match ours, multiply   #
         # the regularization loss by 0.5                                       #
         ########################################################################
+        y_exp = np.exp(scores - np.expand_dims(np.max(scores, -1), -1))
+        y_exp_sum = np.expand_dims(np.sum(y_exp, -1), -1)
+        softmax = y_exp / y_exp_sum
 
+        loss = -np.sum(np.log(softmax) * np.eye(softmax.shape[1])[y]) / softmax.shape[0]
+        loss += reg * 0.5 * (np.sum(W1 ** 2) + np.sum(W2 ** 2))# / (W1.shape[0] * W1.shape[1] + W2.shape[0] * W2.shape[1])
         ########################################################################
         #                              END OF YOUR CODE                        #
         ########################################################################
@@ -109,7 +117,15 @@ class TwoLayerNet(object):
         # example, grads['W1'] should store the gradient on W1, and be a matrix#
         # of same size                                                         #
         ########################################################################
+        loss_grad = -1 / softmax * np.eye(softmax.shape[1])[y] / softmax.shape[0]
 
+        softmax_grad = y_exp * (1 / y_exp_sum * loss_grad + np.expand_dims(np.sum(-1 / (y_exp_sum ** 2) * y_exp * loss_grad, -1), -1))
+        grads['W2'] = np.matmul(np.transpose(h1), softmax_grad) + reg * W2
+        grads['b2'] = np.sum(softmax_grad, 0)
+        h1_grad = np.matmul(softmax_grad, np.transpose(W2))
+        relu_grad = (h1 > 0) * h1_grad
+        grads['W1'] = np.matmul(np.transpose(X), relu_grad) + reg * W1
+        grads['b1'] = np.sum(relu_grad, 0)
         ########################################################################
         #                              END OF YOUR CODE                        #
         ########################################################################
@@ -154,7 +170,9 @@ class TwoLayerNet(object):
             # TODO: Create a random minibatch of training data and labels,     #
             # storing hem in X_batch and y_batch respectively.                 #
             ####################################################################
-
+            indx = np.random.choice(X.shape[0], batch_size)
+            X_batch = X[indx]
+            y_batch = y[indx]
             ####################################################################
             #                             END OF YOUR CODE                     #
             ####################################################################
@@ -169,7 +187,8 @@ class TwoLayerNet(object):
             # using stochastic gradient descent. You'll need to use the        #
             # gradients stored in the grads dictionary defined above.          #
             ####################################################################
-
+            for param in self.params.keys():
+                self.params[param] -= grads[param] * learning_rate
             ####################################################################
             #                             END OF YOUR CODE                     #
             ####################################################################
@@ -214,7 +233,7 @@ class TwoLayerNet(object):
         ########################################################################
         # TODO: Implement this function; it should be VERY simple!             #
         ########################################################################
-
+        y_pred = np.argmax(self.loss(X), -1)
         ########################################################################
         #                              END OF YOUR CODE                        #
         ########################################################################
@@ -223,7 +242,8 @@ class TwoLayerNet(object):
 
 
 def neuralnetwork_hyperparameter_tuning(X_train, y_train, X_val, y_val):
-    best_net = None # store the best model into this 
+    best_net = None # store the best model into this
+    best_acc = 0
     ############################################################################
     # TODO: Tune hyperparameters using the validation set. Store your best     #
     # trained model in best_net.                                               #
@@ -237,6 +257,43 @@ def neuralnetwork_hyperparameter_tuning(X_train, y_train, X_val, y_val):
     # to  write code to sweep through possible combinations of hyperparameters #
     # automatically like we did on the previous exercises.                     #
     ############################################################################
+
+    f, (ax1, ax2) = plt.subplots(2, 1)
+
+    batch_size = 200
+    num_iters = 4q0000
+    learning_rate = 1e-3
+    hidden_size = 512
+    learning_rate_decay = 1
+    for learning_rate in [1e-2]:
+    #for batch_size in [32,64,128,256]:
+        param = learning_rate
+        input_size = X_train.shape[1]#32 * 32 * 3
+        num_classes = 10
+        net = TwoLayerNet(input_size, hidden_size, num_classes)
+
+        # Train the network
+        stats = net.train(X_train, y_train, X_val, y_val,
+                          num_iters=int(num_iters * 200 / batch_size), batch_size=batch_size,
+                          learning_rate=learning_rate, learning_rate_decay=learning_rate_decay,
+                          reg=0.0, verbose=False)
+
+        ax1.plot(stats['val_acc_history'], label=str(param))
+        ax2.plot(stats['train_acc_history'], label=str(param))
+        # Predict on the validation set
+        val_acc = (net.predict(X_val) == y_val).mean()
+        print(str(param), val_acc)
+        if best_net is None or val_acc > best_acc:
+            best_net = net
+    ax1.set_title('Classification accuracy history')
+    ax1.set_xlabel('Epoch')
+    ax1.set_ylabel('Validation accuracy')
+    ax1.legend()
+
+    ax2.set_title('Classification accuracy history')
+    ax2.set_xlabel('Epoch')
+    ax2.set_ylabel('Training accuracy')
+    ax2.legend()
 
     ############################################################################
     #                               END OF YOUR CODE                           #
