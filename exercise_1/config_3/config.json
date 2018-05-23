@@ -67,5 +67,55 @@
     },
     "uuid": "ab5971ce-0276-40d3-8cae-ca476bb9032d",
     "name": "learning_rate: 0.01 - momentum: 0.9 - dropout: 0.5 - reg: 0.001"
+  },
+  {
+    "config": {
+      "learning_rate": 0.01,
+      "momentum": 0.9,
+      "dropout": 0.5,
+      "reg": 0.003
+    },
+    "uuid": "9430c6dc-3683-4a49-bde5-1ea1304e7ef2",
+    "name": "learning_rate: 0.01 - momentum: 0.9 - dropout: 0.5 - reg: 0.003"
+  },
+  {
+    "config": {
+      "learning_rate": 0.01,
+      "momentum": 0.9,
+      "dropout": 0.5,
+      "reg": 0.002
+    },
+    "uuid": "5be0ce58-ab35-46de-b845-1626be420824",
+    "name": "learning_rate: 0.01 - momentum: 0.9 - dropout: 0.5 - reg: 0.002"
+  },
+  {
+    "config": {
+      "learning_rate": 0.01,
+      "momentum": 0.9,
+      "dropout": 0.5,
+      "reg": 0.0009
+    },
+    "uuid": "f9edc0e6-6848-4281-88fc-c7406b507c40",
+    "name": "learning_rate: 0.01 - momentum: 0.9 - dropout: 0.5 - reg: 0.0009"
+  },
+  {
+    "config": {
+      "learning_rate": 0.01,
+      "momentum": 0.9,
+      "dropout": 0.5,
+      "reg": 0.0005
+    },
+    "uuid": "a39acd72-f523-477d-870f-f8653e075285",
+    "name": "learning_rate: 0.01 - momentum: 0.9 - dropout: 0.5 - reg: 0.0005"
+  },
+  {
+    "config": {
+      "learning_rate": 0.01,
+      "momentum": 0.9,
+      "dropout": 0.5,
+      "reg": 0.0001
+    },
+    "uuid": "af775c65-d27f-4c10-9051-e15ee449483f",
+    "name": "learning_rate: 0.01 - momentum: 0.9 - dropout: 0.5 - reg: 0.0001"
   }
 ]
