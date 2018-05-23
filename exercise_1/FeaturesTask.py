@@ -6,15 +6,14 @@ import numpy as np
 from exercise_code.classifiers.neural_net import TwoLayerNet
 import tensorflow as tf
 import pickle
+from exercise_code.features import *
 
-class TwoLayerTask(TaskPlan.Task):
+class FeaturesTask(TaskPlan.Task):
 
     def __init__(self, preset, logger):
         super().__init__(preset, logger)
-        input_size = 32 * 32 * 3
         hidden_size = self.preset.get_int('hidden_size')
         num_classes = 10
-        self.net = TwoLayerNet(input_size, hidden_size, num_classes)
 
         X, y = load_CIFAR10('datasets/')
         # Split the data into train, val, and test sets. In addition we will
@@ -23,8 +22,6 @@ class TwoLayerTask(TaskPlan.Task):
         num_training = 48000
         num_validation = 1000
         num_test = 1000
-
-        assert (num_training + num_validation + num_test) == 50000, 'You have not provided a valid data split.'
 
         # Our training set will be the first num_train points from the original
         # training set.
@@ -43,27 +40,43 @@ class TwoLayerTask(TaskPlan.Task):
         self.X_test = X[mask]
         self.y_test = y[mask]
 
-        self.X_train = np.reshape(self.X_train, (self.X_train.shape[0], -1))
-        self.X_val = np.reshape(self.X_val, (self.X_val.shape[0], -1))
-        self.X_test = np.reshape(self.X_test, (self.X_test.shape[0], -1))
+        num_color_bins = 10  # Number of bins in the color histogram
+        feature_fns = [hog_feature, lambda img: color_histogram_hsv(img, nbin=num_color_bins)]
+        X_train_feats = extract_features(self.X_train, feature_fns, verbose=True)
+        X_val_feats = extract_features(self.X_val, feature_fns)
+        X_test_feats = extract_features(self.X_test, feature_fns)
 
-        mean_image = np.mean(self.X_train, axis=0)
+        # Preprocessing: Subtract the mean feature
+        mean_feat = np.mean(X_train_feats, axis=0, keepdims=True)
+        X_train_feats -= mean_feat
+        X_val_feats -= mean_feat
+        X_test_feats -= mean_feat
 
-        self.X_train -= mean_image
-        self.X_val -= mean_image
-        self.X_test -= mean_image
+        # Preprocessing: Divide by standard deviation. This ensures that each feature
+        # has roughly the same scale.
+        std_feat = np.std(X_train_feats, axis=0, keepdims=True)
+        X_train_feats /= std_feat
+        X_val_feats /= std_feat
+        X_test_feats /= std_feat
+
+        # Preprocessing: Add a bias dimension
+        self.X_train_feats = np.hstack([X_train_feats, np.ones((X_train_feats.shape[0], 1))])
+        self.X_val_feats = np.hstack([X_val_feats, np.ones((X_val_feats.shape[0], 1))])
+        self.X_test_feats = np.hstack([X_test_feats, np.ones((X_test_feats.shape[0], 1))])
+
+        self.net = TwoLayerNet(self.X_train_feats.shape[1], hidden_size, num_classes)
 
     def save(self, path):
-        pickle.dump({'two_layer_net': self.net}, open(str(path / 'two_layer_net.p'), 'wb'))
+        pickle.dump({'feature_neural_net': self.net}, open(str(path / 'feature_neural_net.p'), 'wb'))
 
     def step(self, tensorboard_writer, current_iteration):
-        loss, acc = self.net.step(self.X_train, self.y_train, learning_rate=self.preset.get_float('learning_rate'), reg=self.preset.get_float('reg'), momentum=self.preset.get_float('momentum'), dropout=self.preset.get_float('dropout'), batch_size=self.preset.get_int('batch_size'))
+        loss, acc = self.net.step(self.X_train_feats, self.y_train, learning_rate=self.preset.get_float('learning_rate'), reg=self.preset.get_float('reg'), momentum=self.preset.get_float('momentum'), dropout=self.preset.get_float('dropout'), batch_size=self.preset.get_int('batch_size'))
         tensorboard_writer.add_summary(tf.Summary(value=[tf.Summary.Value(tag="loss/training", simple_value=loss)]), current_iteration)
         tensorboard_writer.add_summary(tf.Summary(value=[tf.Summary.Value(tag="accuracy/training", simple_value=acc)]),
                                        current_iteration)
 
-        y_val_pred = self.net.predict(self.X_val)
+        y_val_pred = self.net.predict(self.X_val_feats)
         tensorboard_writer.add_summary(tf.Summary(value=[tf.Summary.Value(tag="accuracy/val", simple_value=np.mean(self.y_val == y_val_pred))]), current_iteration)
 
     def load(self, path):
-        self.net = pickle.load(open(str(path / 'two_layer_net.p'), 'rb'))['two_layer_net']
+        self.net = pickle.load(open(str(path / 'feature_neural_net.p'), 'rb'))['feature_neural_net']

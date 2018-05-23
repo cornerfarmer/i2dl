@@ -40,8 +40,9 @@ class TwoLayerNet(object):
         self.params['b1'] = np.zeros(hidden_size)
         self.params['W2'] = std * np.random.randn(hidden_size, output_size)
         self.params['b2'] = np.zeros(output_size)
+        self.last_grads = None
 
-    def loss(self, X, y=None, reg=0.0):
+    def loss(self, X, y=None, reg=0.0, dropout=1.0):
         """
         Compute the loss and gradients for a two layer fully connected neural
         network.
@@ -80,6 +81,11 @@ class TwoLayerNet(object):
         ########################################################################
         h1 = np.matmul(X, W1) + b1
         h1 = h1 * (h1 > 0)
+
+        if dropout < 1:
+            h1[np.random.rand(h1.shape[0], h1.shape[1]) < dropout] = 0
+            h1 = h1 / dropout
+
         h2 = np.matmul(h1, W2) + b2
         scores = h2
         ########################################################################
@@ -190,7 +196,9 @@ class TwoLayerNet(object):
     def step(self, X, y,
               learning_rate=1e-3,
               reg=1e-5,
-              batch_size=200):
+              batch_size=200,
+             momentum=0,
+             dropout=1):
         X_batch = None
         y_batch = None
 
@@ -206,7 +214,7 @@ class TwoLayerNet(object):
         ####################################################################
 
         # Compute loss and gradients using the current minibatch
-        loss, acc, grads = self.loss(X_batch, y=y_batch, reg=reg)
+        loss, acc, grads = self.loss(X_batch, y=y_batch, reg=reg, dropout=dropout)
 
         ####################################################################
         # TODO: Use the gradients in the grads dictionary to update the    #
@@ -214,6 +222,12 @@ class TwoLayerNet(object):
         # using stochastic gradient descent. You'll need to use the        #
         # gradients stored in the grads dictionary defined above.          #
         ####################################################################
+        if momentum > 0:
+            if self.last_grads is not None:
+                for param in self.params.keys():
+                    grads[param] += self.last_grads[param] * momentum
+            self.last_grads = grads
+
         for param in self.params.keys():
             self.params[param] -= grads[param] * learning_rate
         ####################################################################
@@ -243,7 +257,7 @@ class TwoLayerNet(object):
         # TODO: Implement this function; it should be VERY simple!             #
         ########################################################################
         y_pred = np.argmax(self.loss(X), -1)
-        ########################################################################
+        #############################:###########################################
         #                              END OF YOUR CODE                        #
         ########################################################################
 

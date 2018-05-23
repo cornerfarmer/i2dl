@@ -1,0 +1,71 @@
+[
+  {
+    "abstract": true,
+    "name": "Default",
+    "config": {
+      "batch_size": 200,
+      "hidden_size": 512,
+      "reg": 0,
+      "learning_rate": 0.01,
+      "momentum": 0
+    },
+    "uuid": "bdc2cb30-76ae-4918-9b74-744be925116a"
+  },
+  {
+    "config": {
+      "learning_rate": 0.01,
+      "momentum": 0.9,
+      "dropout": 0.5
+    },
+    "name": "learning_rate: 0.01 - momentum: 0.9 - dropout: 0.5",
+    "uuid": "22d2ffbe-71ce-403d-9a10-7c267c632ff7"
+  },
+  {
+    "config": {
+      "learning_rate": 0.1,
+      "momentum": 0.9,
+      "dropout": 0.5
+    },
+    "name": "learning_rate: 0.1 - momentum: 0.9 - dropout: 0.5",
+    "uuid": "6fb45ab7-0c40-48b2-bc69-82cfaab41294"
+  },
+  {
+    "config": {
+      "learning_rate": 0.1,
+      "momentum": 0.9,
+      "dropout": 0.25
+    },
+    "uuid": "0b1b70ff-3751-4fe9-8da5-9c3809bf369a",
+    "name": "learning_rate: 0.1 - momentum: 0.9 - dropout: 0.25"
+  },
+  {
+    "config": {
+      "learning_rate": 0.01,
+      "momentum": 0.9,
+      "dropout": 0.5,
+      "reg": 0.1
+    },
+    "name": "learning_rate: 0.01 - momentum: 0.9 - dropout: 0.5 - reg: 0.1",
+    "uuid": "68856a37-e930-4232-8676-74e54a23e079"
+  },
+  {
+    "config": {
+      "learning_rate": 0.01,
+      "momentum": 0.9,
+      "dropout": 0.5,
+      "reg": 0.01
+    },
+    "uuid": "02c70ac5-89a2-4cb7-8c95-737181641616",
+    "name": "learning_rate: 0.01 - momentum: 0.9 - dropout: 0.5 - reg: 0.01"
+  },
+  {
+    "config": {
+      "learning_rate": 0.01,
+      "momentum": 0.9,
+      "dropout": 0.5,
+      "reg": 0.001
+    },
+    "uuid": "ab5971ce-0276-40d3-8cae-ca476bb9032d",
+    "name": "learning_rate: 0.01 - momentum: 0.9 - dropout: 0.5 - reg: 0.001"
+  }
+]
