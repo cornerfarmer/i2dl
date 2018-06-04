@@ -9,8 +9,8 @@ import pickle
 
 class TwoLayerTask(TaskPlan.Task):
 
-    def __init__(self, preset, logger):
-        super().__init__(preset, logger)
+    def __init__(self, preset, logger, subtask):
+        super().__init__(preset, logger, subtask)
         input_size = 32 * 32 * 3
         hidden_size = self.preset.get_int('hidden_size')
         num_classes = 10

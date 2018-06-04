@@ -129,6 +129,10 @@ class Solver(object):
 
         self._reset()
 
+    def set_model(self, model):
+        self.model = model
+        self._reset()
+
     def _reset(self):
         """
         Set up some book-keeping variables for optimization. Don't call this
@@ -210,6 +214,17 @@ class Solver(object):
         acc = np.mean(y_pred == y)
 
         return acc
+
+    def step(self):
+        self._step()
+
+        return self.loss_history[-1]
+
+    def check_all_accuracies(self):
+        train_acc = self.check_accuracy(self.X_train, self.y_train, num_samples=1000)
+        val_acc = self.check_accuracy(self.X_val, self.y_val)
+
+        return train_acc, val_acc
 
     def train(self):
         """

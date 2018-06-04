@@ -1,0 +1,76 @@
+[
+  {
+    "abstract": true,
+    "name": "Default",
+    "config": {
+      "hidden_size": [
+        512
+      ],
+      "weight_scale": 0.0001,
+      "use_batchnorm": false,
+      "dropout": 0.75,
+      "reg": 0.0,
+      "batch_size": 200,
+      "learning_rate": 0.0001,
+      "update_rule": "sgd_momentum",
+      "val_interval": 240
+    },
+    "uuid": "c8fd7bd9-8193-49d3-b36f-cb037ef725b3"
+  },
+  {
+    "config": {},
+    "uuid": "6331a2b3-6b31-43af-b445-eec57788afa2",
+    "name": "empty"
+  },
+  {
+    "config": {
+      "iterate": {
+        "learning_rate": [
+          0.0001,
+          0.001,
+          0.01
+        ],
+        "reg": [
+          0.001,
+          0.01,
+          0.1
+        ],
+        "dropout": [
+          0.0,
+          0.25,
+          0.5,
+          0.75
+        ],
+        "use_batchnorm": [
+          true,
+          false
+        ],
+        "hidden_size": [
+          [
+            512
+          ],
+          [
+            256
+          ],
+          [
+            128
+          ],
+          [
+            512,
+            256
+          ],
+          [
+            256,
+            256
+          ],
+          [
+            128,
+            256
+          ]
+        ]
+      }
+    },
+    "name": "grid search",
+    "uuid": "d58b0525-9a79-4004-a7e3-9d5686156257"
+  }
+]
