@@ -68,7 +68,7 @@ def get_CIFAR10_data(num_training=48000, num_validation=1000, num_test=1000):
         'X_test': X_test, 'y_test': y_test,
     }
 
-def data_augm(images, labels, factor, scale_min, scale_max):
+def data_augm(images, labels, factor, scale_min, scale_max, transl_max):
     new_images = np.zeros([images.shape[0] * factor, images.shape[1], images.shape[2], images.shape[3]])
     new_labels = np.zeros([labels.shape[0] * factor], dtype=np.int)
 
@@ -76,13 +76,17 @@ def data_augm(images, labels, factor, scale_min, scale_max):
     next_new_index = 0
     for image in images:
         for i in range(factor):
-            new_images[next_new_index] = data_augm_image(np.array(image), scale_min, scale_max)
+            new_images[next_new_index] = data_augm_image(np.array(image), scale_min, scale_max, transl_max)
             new_labels[next_new_index] = labels[index]
             next_new_index += 1
         index += 1
     return new_images, new_labels
 
-def data_augm_image(image, scale_min, scale_max):
+def data_augm_image(image, scale_min, scale_max, transl_max):
+    #crop_image(image, scale_min, scale_max)
+    return translate_image(image, transl_max)
+
+def crop_image(image, scale_min, scale_max):
     img_size = image.shape[0]
     scale_size = np.random.randint(img_size * scale_min, img_size * scale_max)
     image = cv2.resize(image, dsize=(scale_size, scale_size), interpolation=cv2.INTER_CUBIC)
@@ -91,6 +95,17 @@ def data_augm_image(image, scale_min, scale_max):
     left = np.random.randint(0, scale_size - img_size)
     image = image[top:top + img_size, left:left + img_size, :]
     return image
+
+def translate_image(image, transl_max):
+    new_image = np.zeros_like(image)
+    x = np.random.randint(-transl_max, transl_max)
+    y = np.random.randint(-transl_max, transl_max)
+    width = image.shape[0] - abs(x)
+    height = image.shape[1] - abs(y)
+
+    new_image[max(0, -x):max(0, -x) + width, max(0, -y):max(0, -y) + height, :] = image[max(0, x):max(0, x) + width, max(0, y):max(0, y) + height, :]
+
+    return new_image
 
 
 def extract_features_initial(data):

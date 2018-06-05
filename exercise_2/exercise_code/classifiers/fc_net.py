@@ -2,7 +2,7 @@ import numpy as np
 
 from exercise_code.layers import *
 from exercise_code.layer_utils import *
-
+from exercise_code.features import *
 
 class TwoLayerNet(object):
     """
@@ -211,6 +211,14 @@ class FullyConnectedNet(object):
         """
         X = X.astype(self.dtype)
         mode = 'test' if y is None else 'train'
+
+        if np.prod(X.shape[1:]) != self.params['W1'].shape[0]:
+            num_color_bins = 10
+            feature_fns = [hog_feature, lambda img: color_histogram_hsv(img, nbin=num_color_bins)]
+            X = extract_features(X, feature_fns, verbose=True)
+
+            X -= self.mean_feat
+            X /= self.std_feat
 
         # Set train/test mode for batchnorm params and dropout param since they
         # behave differently during training and testing.

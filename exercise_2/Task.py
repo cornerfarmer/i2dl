@@ -28,6 +28,10 @@ class Task(TaskPlan.Task):
             self.logger.log("Extracting features")
 
         self.net = FullyConnectedNet(self.preset.get_list('hidden_size')[:], input_dim=np.prod(full_data['X_train'].shape[1:]), weight_scale=self.preset.get_float('weight_scale'), use_batchnorm=self.preset.get_bool('use_batchnorm'), dropout=self.preset.get_float('dropout'), reg=self.preset.get_float('reg'))
+
+        if self.preset.get_bool('extract_features'):
+            self.net.mean_feat, self.net.std_feat = self.mean_feat, self.std_feat
+
         self.solver = Solver(self.net, full_data,
                         num_epochs=50, batch_size=self.preset.get_int('batch_size'),
                         update_rule=self.preset.get_string('update_rule'),
@@ -41,7 +45,7 @@ class Task(TaskPlan.Task):
 
     def step(self, tensorboard_writer, current_iteration):
         if self.preset.get_bool('data_augmentation') and current_iteration % int(self.data['X_train'].shape[0] / self.preset.get_int('batch_size')) == 0:
-            x_train, y_train = data_augm(self.data['X_train'], self.data['y_train'], 1, self.preset.get_float('scale_min'), self.preset.get_float('scale_max'))
+            x_train, y_train = data_augm(self.data['X_train'], self.data['y_train'], 1, self.preset.get_float('scale_min'), self.preset.get_float('scale_max'), self.preset.get_int('translate_max'))
             if self.preset.get_bool('extract_features'):
                 x_train = extract_features_of_images(x_train, self.mean_feat, self.std_feat)
                 self.logger.log("Extracting features")
