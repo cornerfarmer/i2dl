@@ -458,3 +458,162 @@
 [2018-06-04 11:58:17,583][INFO][general] The task "Exercise 2: grid search (try 0)" has been added to queue
 [2018-06-04 11:58:17,587][INFO][general] The task "Exercise 2: grid search (try 0)" has been started, beginning with iteration 0
 [2018-06-04 11:58:31,168][INFO][general] Starting tensorboard for project "Exercise 2"...
+[2018-06-04 20:05:38,768][INFO][general] --------------------------------------------------
+[2018-06-04 20:06:05,407][INFO][general] Starting tensorboard for project "Exercise 2"...
+[2018-06-04 20:06:24,725][INFO][general] The task "Exercise 2: empty (try 0)" has been added to queue
+[2018-06-04 20:06:24,732][INFO][general] The task "Exercise 2: empty (try 0)" has been started, beginning with iteration 10000
+[2018-06-04 20:07:38,722][INFO][general] Preset "dropout: 0.5 - iterate/reg: [0.001, 0.01, 0.1, 1]" has been added
+[2018-06-04 20:07:55,761][INFO][general] The task "Exercise 2: dropout: 0.5 - iterate/reg: [0.001, 0.01, 0.1, 1] (try 0)" has been added to queue
+[2018-06-04 20:12:01,613][INFO][general] The task "Exercise 2: empty (try 0)" has been finished after 20000 finished iterations
+[2018-06-04 20:12:01,616][INFO][general] The task "Exercise 2: dropout: 0.5 - iterate/reg: [0.001, 0.01, 0.1, 1] (try 0)" has been started, beginning with iteration 0
+[2018-06-04 20:29:00,043][INFO][general] Preset "dropout: 0.5 - iterate/reg: [0.001, 0.01, 0.1, 1]" has been added
+[2018-06-04 20:29:51,229][INFO][general] Preset "iterate/reg: [0.001, 0.01, 0.1, 1] - iterate/dropout: [0.6, 0.7, 0.8]" has been added
+[2018-06-04 20:29:58,502][INFO][general] The task "Exercise 2: iterate/reg: [0.001, 0.01, 0.1, 1] - iterate/dropout: [0.6, 0.7, 0.8] (try 0)" has been added to queue
+[2018-06-04 20:57:50,974][INFO][general] The task "Exercise 2: iterate/reg: [0.001, 0.01, 0.1, 1] - iterate/dropout: [0.6, 0.7, 0.8] (try 0)" has been cancelled
+[2018-06-04 20:59:24,837][INFO][general] The task "Exercise 2: dropout: 0.5 - iterate/reg: [0.001, 0.01, 0.1, 1] (try 0)" has been paused after 13368 finished iterations
+[2018-06-04 21:01:18,059][INFO][general] Preset "dropout: 0.5 - hidden_size: [512, 256, 128]" has been added
+[2018-06-04 21:01:22,286][INFO][general] The task "Exercise 2: dropout: 0.5 - hidden_size: [512, 256, 128] (try 0)" has been added to queue
+[2018-06-04 21:01:22,291][INFO][general] The task "Exercise 2: dropout: 0.5 - hidden_size: [512, 256, 128] (try 0)" has been started, beginning with iteration 0
+[2018-06-04 21:03:58,142][INFO][general] Preset "update_rule: adam - dropout: 0.5 - hidden_size: [512, 256, 128]" has been added
+[2018-06-04 21:04:04,642][INFO][general] The task "Exercise 2: update_rule: adam - dropout: 0.5 - hidden_size: [512, 256, 128] (try 0)" has been added to queue
+[2018-06-04 21:04:26,733][INFO][general] The task "Exercise 2: dropout: 0.5 - hidden_size: [512, 256, 128] (try 0)" has been paused after 1654 finished iterations
+[2018-06-04 21:04:26,737][INFO][general] The task "Exercise 2: update_rule: adam - dropout: 0.5 - hidden_size: [512, 256, 128] (try 0)" has been started, beginning with iteration 0
+[2018-06-04 22:33:00,537][INFO][general] The task "Exercise 2: update_rule: adam - dropout: 0.5 - hidden_size: [512, 256, 128] (try 0)" has been finished after 40000 finished iterations
+[2018-06-04 22:36:21,177][INFO][general] Preset "update_rule: adam - dropout: 0.5 - hidden_size: [128, 128, 128]" has been added
+[2018-06-04 22:36:27,777][INFO][general] The task "Exercise 2: update_rule: adam - dropout: 0.5 - hidden_size: [128, 128, 128] (try 0)" has been added to queue
+[2018-06-04 22:36:27,782][INFO][general] The task "Exercise 2: update_rule: adam - dropout: 0.5 - hidden_size: [128, 128, 128] (try 0)" has been started, beginning with iteration 0
+[2018-06-04 22:44:20,746][INFO][general] The task "Exercise 2: update_rule: adam - dropout: 0.5 - hidden_size: [128, 128, 128] (try 0)" has been finished after 20000 finished iterations
+[2018-06-04 22:44:47,637][INFO][general] The task "Exercise 2: update_rule: adam - dropout: 0.5 - hidden_size: [128, 128, 128] (try 1)" has been added to queue
+[2018-06-04 22:44:47,642][INFO][general] The task "Exercise 2: update_rule: adam - dropout: 0.5 - hidden_size: [128, 128, 128] (try 1)" has been started, beginning with iteration 0
+[2018-06-04 22:49:43,272][INFO][general] Preset "update_rule: adam - dropout: 0.5 - hidden_size: [256, 128, 128]" has been added
+[2018-06-04 22:49:47,519][INFO][general] The task "Exercise 2: update_rule: adam - dropout: 0.5 - hidden_size: [256, 128, 128] (try 0)" has been added to queue
+[2018-06-04 22:51:14,768][INFO][general] The task "Exercise 2: update_rule: adam - dropout: 0.5 - hidden_size: [256, 128, 128] (try 0)" has been cancelled
+[2018-06-04 22:51:37,593][INFO][general] Preset "update_rule: adam - dropout: 0.5 - hidden_size: [128, 128, 128] - use_batchnorm: True" has been added
+[2018-06-04 22:51:43,297][INFO][general] The task "Exercise 2: update_rule: adam - dropout: 0.5 - hidden_size: [128, 128, 128] - use_batchnorm: True (try 0)" has been added to queue
+[2018-06-04 22:51:50,915][INFO][general] The task "Exercise 2: update_rule: adam - dropout: 0.5 - hidden_size: [128, 128, 128] (try 1)" has been finished after 20000 finished iterations
+[2018-06-04 22:51:50,918][INFO][general] The task "Exercise 2: update_rule: adam - dropout: 0.5 - hidden_size: [128, 128, 128] - use_batchnorm: True (try 0)" has been started, beginning with iteration 0
+[2018-06-04 22:53:21,009][INFO][general] The task "Exercise 2: update_rule: adam - dropout: 0.5 - hidden_size: [256, 128, 128] (try 0)" has been added to queue
+[2018-06-04 22:58:56,628][INFO][general] The task "Exercise 2: update_rule: adam - dropout: 0.5 - hidden_size: [128, 128, 128] - use_batchnorm: True (try 0)" has been finished after 20000 finished iterations
+[2018-06-04 22:58:56,631][INFO][general] The task "Exercise 2: update_rule: adam - dropout: 0.5 - hidden_size: [256, 128, 128] (try 0)" has been started, beginning with iteration 0
+[2018-06-04 23:08:54,606][INFO][general] Preset "update_rule: adam - dropout: 0.5 - hidden_size: [128, 128, 128, 128, 128, 128]" has been added
+[2018-06-04 23:08:58,724][INFO][general] The task "Exercise 2: update_rule: adam - dropout: 0.5 - hidden_size: [128, 128, 128, 128, 128, 128] (try 0)" has been added to queue
+[2018-06-04 23:09:59,367][INFO][general] The task "Exercise 2: update_rule: adam - dropout: 0.5 - hidden_size: [256, 128, 128] (try 0)" has been finished after 20000 finished iterations
+[2018-06-04 23:09:59,370][INFO][general] The task "Exercise 2: update_rule: adam - dropout: 0.5 - hidden_size: [128, 128, 128, 128, 128, 128] (try 0)" has been started, beginning with iteration 0
+[2018-06-04 23:22:38,191][INFO][general] The task "Exercise 2: update_rule: adam - dropout: 0.5 - hidden_size: [128, 128, 128, 128, 128, 128] (try 0)" has been finished after 30000 finished iterations
+[2018-06-04 23:22:52,485][INFO][general] Preset "update_rule: adam - dropout: 0.5 - hidden_size: [128, 128, 128, 128, 128, 128] - use_batchnorm: True" has been added
+[2018-06-04 23:22:58,644][INFO][general] The task "Exercise 2: update_rule: adam - dropout: 0.5 - hidden_size: [128, 128, 128, 128, 128, 128] - use_batchnorm: True (try 0)" has been added to queue
+[2018-06-04 23:22:58,651][INFO][general] The task "Exercise 2: update_rule: adam - dropout: 0.5 - hidden_size: [128, 128, 128, 128, 128, 128] - use_batchnorm: True (try 0)" has been started, beginning with iteration 0
+[2018-06-04 23:35:24,814][INFO][general] Preset "update_rule: adam - dropout: 0.5 - hidden_size: [1024]" has been added
+[2018-06-04 23:35:29,683][INFO][general] The task "Exercise 2: update_rule: adam - dropout: 0.5 - hidden_size: [1024] (try 0)" has been added to queue
+[2018-06-04 23:35:45,061][INFO][general] The task "Exercise 2: update_rule: adam - dropout: 0.5 - hidden_size: [128, 128, 128, 128, 128, 128] - use_batchnorm: True (try 0)" has been finished after 30000 finished iterations
+[2018-06-04 23:35:45,065][INFO][general] The task "Exercise 2: update_rule: adam - dropout: 0.5 - hidden_size: [1024] (try 0)" has been started, beginning with iteration 0
+[2018-06-05 00:05:46,698][INFO][general] Preset "update_rule: adam - dropout: 0.7 - hidden_size: [512]" has been added
+[2018-06-05 00:05:57,307][INFO][general] The task "Exercise 2: update_rule: adam - dropout: 0.7 - hidden_size: [512] (try 0)" has been added to queue
+[2018-06-05 00:06:13,848][INFO][general] The task "Exercise 2: update_rule: adam - dropout: 0.5 - hidden_size: [1024] (try 0)" has been paused after 13317 finished iterations
+[2018-06-05 00:06:13,852][INFO][general] The task "Exercise 2: update_rule: adam - dropout: 0.7 - hidden_size: [512] (try 0)" has been started, beginning with iteration 0
+[2018-06-05 00:19:43,254][INFO][general] Preset "update_rule: adam - dropout: 0.7 - hidden_size: [512]" has been changed
+[2018-06-05 00:19:55,624][INFO][general] Preset "update_rule: adam - dropout: 0.7 - hidden_size: [512]" has been changed
+[2018-06-05 00:20:03,343][INFO][general] Preset "update_rule: adam - dropout: 0.7 - hidden_size: [512, 256]" has been added
+[2018-06-05 00:20:07,650][INFO][general] The task "Exercise 2: update_rule: adam - dropout: 0.7 - hidden_size: [512, 256] (try 0)" has been added to queue
+[2018-06-05 00:20:08,919][INFO][general] The task "Exercise 2: update_rule: adam - dropout: 0.7 - hidden_size: [512] (try 0)" has been paused after 9072 finished iterations
+[2018-06-05 00:20:08,922][INFO][general] The task "Exercise 2: update_rule: adam - dropout: 0.7 - hidden_size: [512, 256] (try 0)" has been started, beginning with iteration 0
+[2018-06-05 00:35:18,155][INFO][general] Preset "update_rule: adam - dropout: 0.7 - hidden_size: [512, 256, 256, 128, 128, 128] - use_batchnorm: True" has been added
+[2018-06-05 00:35:22,579][INFO][general] The task "Exercise 2: update_rule: adam - dropout: 0.7 - hidden_size: [512, 256, 256, 128, 128, 128] - use_batchnorm: True (try 0)" has been added to queue
+[2018-06-05 00:36:53,065][INFO][general] The task "Exercise 2: update_rule: adam - dropout: 0.7 - hidden_size: [512, 256] (try 0)" has been paused after 14967 finished iterations
+[2018-06-05 00:36:53,068][INFO][general] The task "Exercise 2: update_rule: adam - dropout: 0.7 - hidden_size: [512, 256, 256, 128, 128, 128] - use_batchnorm: True (try 0)" has been started, beginning with iteration 0
+[2018-06-05 00:37:29,855][INFO][general] Preset "update_rule: adam - dropout: 0.7 - hidden_size: [512, 256, 256, 128, 128, 128] - use_batchnorm: True - learning_rate: 0.001" has been added
+[2018-06-05 00:37:34,268][INFO][general] The task "Exercise 2: update_rule: adam - dropout: 0.7 - hidden_size: [512, 256, 256, 128, 128, 128] - use_batchnorm: True - learning_rate: 0.001 (try 0)" has been added to queue
+[2018-06-05 00:37:35,220][INFO][general] The task "Exercise 2: update_rule: adam - dropout: 0.7 - hidden_size: [512, 256, 256, 128, 128, 128] - use_batchnorm: True (try 0)" has been paused after 446 finished iterations
+[2018-06-05 00:37:35,223][INFO][general] The task "Exercise 2: update_rule: adam - dropout: 0.7 - hidden_size: [512, 256, 256, 128, 128, 128] - use_batchnorm: True - learning_rate: 0.001 (try 0)" has been started, beginning with iteration 0
+[2018-06-05 00:55:15,728][INFO][general] The task "Exercise 2: update_rule: adam - dropout: 0.7 - hidden_size: [512, 256, 256, 128, 128, 128] - use_batchnorm: True - learning_rate: 0.001 (try 0)" has been paused after 13364 finished iterations
+[2018-06-05 00:55:22,407][INFO][general] The task "Exercise 2: update_rule: adam - dropout: 0.5 - hidden_size: [256, 128, 128] (try 1)" has been added to queue
+[2018-06-05 00:55:22,415][INFO][general] The task "Exercise 2: update_rule: adam - dropout: 0.5 - hidden_size: [256, 128, 128] (try 1)" has been started, beginning with iteration 0
+[2018-06-05 00:55:22,433][ERROR][general] The task "Exercise 2: update_rule: adam - dropout: 0.5 - hidden_size: [256, 128, 128] (try 1)" has been stopped due to an error after 0 finished iterations
+[2018-06-05 00:55:41,931][INFO][general] The task "Exercise 2: update_rule: adam - dropout: 0.5 - hidden_size: [256, 128, 128] (try 1)" has been added to queue
+[2018-06-05 00:55:41,937][INFO][general] The task "Exercise 2: update_rule: adam - dropout: 0.5 - hidden_size: [256, 128, 128] (try 1)" has been started, beginning with iteration 0
+[2018-06-05 00:55:44,406][ERROR][general] The task "Exercise 2: update_rule: adam - dropout: 0.5 - hidden_size: [256, 128, 128] (try 1)" has been stopped due to an error after 0 finished iterations
+[2018-06-05 00:56:45,966][INFO][general] The task "Exercise 2: update_rule: adam - dropout: 0.5 - hidden_size: [256, 128, 128] (try 1)" has been added to queue
+[2018-06-05 00:56:45,971][INFO][general] The task "Exercise 2: update_rule: adam - dropout: 0.5 - hidden_size: [256, 128, 128] (try 1)" has been started, beginning with iteration 0
+[2018-06-05 00:57:51,865][ERROR][general] The task "Exercise 2: update_rule: adam - dropout: 0.5 - hidden_size: [256, 128, 128] (try 1)" has been stopped due to an error after 0 finished iterations
+[2018-06-05 00:59:34,336][INFO][general] The task "Exercise 2: update_rule: adam - dropout: 0.5 - hidden_size: [256, 128, 128] (try 1)" has been added to queue
+[2018-06-05 00:59:34,340][INFO][general] The task "Exercise 2: update_rule: adam - dropout: 0.5 - hidden_size: [256, 128, 128] (try 1)" has been started, beginning with iteration 0
+[2018-06-05 01:00:41,329][ERROR][general] The task "Exercise 2: update_rule: adam - dropout: 0.5 - hidden_size: [256, 128, 128] (try 1)" has been stopped due to an error after 0 finished iterations
+[2018-06-05 01:01:41,014][INFO][general] The task "Exercise 2: update_rule: adam - dropout: 0.5 - hidden_size: [256, 128, 128] (try 1)" has been added to queue
+[2018-06-05 01:01:41,020][INFO][general] The task "Exercise 2: update_rule: adam - dropout: 0.5 - hidden_size: [256, 128, 128] (try 1)" has been started, beginning with iteration 0
+[2018-06-05 01:05:47,277][INFO][general] Starting tensorboard for project "Exercise 1.3"...
+[2018-06-05 01:07:00,262][INFO][general] The task "Exercise 2: update_rule: adam - dropout: 0.5 - hidden_size: [256, 128, 128] (try 1)" has been finished after 20000 finished iterations
+[2018-06-05 01:09:50,206][INFO][general] Preset "update_rule: sgd_momentum - dropout: 0.5 - learning_rate: 0.01 - reg: 0.001 - hidden_size: [512]" has been added
+[2018-06-05 01:09:58,768][INFO][general] The task "Exercise 2: update_rule: sgd_momentum - dropout: 0.5 - learning_rate: 0.01 - reg: 0.001 - hidden_size: [512] (try 0)" has been added to queue
+[2018-06-05 01:09:58,773][INFO][general] The task "Exercise 2: update_rule: sgd_momentum - dropout: 0.5 - learning_rate: 0.01 - reg: 0.001 - hidden_size: [512] (try 0)" has been started, beginning with iteration 0
+[2018-06-05 01:13:27,436][INFO][general] Preset "update_rule: adam - dropout: 0.5 - reg: 0.001 - hidden_size: [512]" has been added
+[2018-06-05 01:14:01,792][INFO][general] The task "Exercise 2: update_rule: adam - dropout: 0.5 - reg: 0.001 - hidden_size: [512] (try 0)" has been added to queue
+[2018-06-05 01:14:03,798][INFO][general] The task "Exercise 2: update_rule: sgd_momentum - dropout: 0.5 - learning_rate: 0.01 - reg: 0.001 - hidden_size: [512] (try 0)" has been finished after 20000 finished iterations
+[2018-06-05 01:14:03,801][INFO][general] The task "Exercise 2: update_rule: adam - dropout: 0.5 - reg: 0.001 - hidden_size: [512] (try 0)" has been started, beginning with iteration 0
+[2018-06-05 01:17:06,680][INFO][general] Preset "update_rule: sgd_momentum - dropout: 0.5 - learning_rate: 0.01 - reg: 0.001 - hidden_size: [512, 256]" has been added
+[2018-06-05 01:17:12,689][INFO][general] The task "Exercise 2: update_rule: sgd_momentum - dropout: 0.5 - learning_rate: 0.01 - reg: 0.001 - hidden_size: [512, 256] (try 0)" has been added to queue
+[2018-06-05 01:18:37,616][INFO][general] The task "Exercise 2: update_rule: adam - dropout: 0.5 - reg: 0.001 - hidden_size: [512] (try 0)" has been finished after 20000 finished iterations
+[2018-06-05 01:18:37,618][INFO][general] The task "Exercise 2: update_rule: sgd_momentum - dropout: 0.5 - learning_rate: 0.01 - reg: 0.001 - hidden_size: [512, 256] (try 0)" has been started, beginning with iteration 0
+[2018-06-05 01:27:10,412][INFO][general] Preset "update_rule: sgd_momentum - dropout: 0.5 - learning_rate: 0.01 - reg: 0.001 - hidden_size: [1024]" has been added
+[2018-06-05 01:27:14,573][INFO][general] The task "Exercise 2: update_rule: sgd_momentum - dropout: 0.5 - learning_rate: 0.01 - reg: 0.001 - hidden_size: [1024] (try 0)" has been added to queue
+[2018-06-05 01:32:58,349][INFO][general] The task "Exercise 2: update_rule: sgd_momentum - dropout: 0.5 - learning_rate: 0.01 - reg: 0.001 - hidden_size: [512, 256] (try 0)" has been finished after 40000 finished iterations
+[2018-06-05 01:32:58,352][INFO][general] The task "Exercise 2: update_rule: sgd_momentum - dropout: 0.5 - learning_rate: 0.01 - reg: 0.001 - hidden_size: [1024] (try 0)" has been started, beginning with iteration 0
+[2018-06-05 01:58:15,958][INFO][general] The task "Exercise 2: update_rule: sgd_momentum - dropout: 0.5 - learning_rate: 0.01 - reg: 0.001 - hidden_size: [1024] (try 0)" has been finished after 60000 finished iterations
+[2018-06-05 11:19:54,940][INFO][general] --------------------------------------------------
+[2018-06-05 11:20:19,814][INFO][general] The task "Exercise 2: update_rule: sgd_momentum - dropout: 0.5 - learning_rate: 0.01 - reg: 0.001 - hidden_size: [512] (try 1)" has been added to queue
+[2018-06-05 11:20:19,821][INFO][general] The task "Exercise 2: update_rule: sgd_momentum - dropout: 0.5 - learning_rate: 0.01 - reg: 0.001 - hidden_size: [512] (try 1)" has been started, beginning with iteration 0
+[2018-06-05 11:20:24,853][ERROR][general] The task "Exercise 2: update_rule: sgd_momentum - dropout: 0.5 - learning_rate: 0.01 - reg: 0.001 - hidden_size: [512] (try 1)" has been stopped due to an error after 0 finished iterations
+[2018-06-05 11:20:58,362][INFO][general] The task "Exercise 2: update_rule: sgd_momentum - dropout: 0.5 - learning_rate: 0.01 - reg: 0.001 - hidden_size: [512] (try 1)" has been added to queue
+[2018-06-05 11:20:58,370][INFO][general] The task "Exercise 2: update_rule: sgd_momentum - dropout: 0.5 - learning_rate: 0.01 - reg: 0.001 - hidden_size: [512] (try 1)" has been started, beginning with iteration 0
+[2018-06-05 11:21:03,593][ERROR][general] The task "Exercise 2: update_rule: sgd_momentum - dropout: 0.5 - learning_rate: 0.01 - reg: 0.001 - hidden_size: [512] (try 1)" has been stopped due to an error after 0 finished iterations
+[2018-06-05 11:21:59,617][INFO][general] The task "Exercise 2: update_rule: sgd_momentum - dropout: 0.5 - learning_rate: 0.01 - reg: 0.001 - hidden_size: [512] (try 1)" has been added to queue
+[2018-06-05 11:21:59,624][INFO][general] The task "Exercise 2: update_rule: sgd_momentum - dropout: 0.5 - learning_rate: 0.01 - reg: 0.001 - hidden_size: [512] (try 1)" has been started, beginning with iteration 0
+[2018-06-05 11:22:04,813][ERROR][general] The task "Exercise 2: update_rule: sgd_momentum - dropout: 0.5 - learning_rate: 0.01 - reg: 0.001 - hidden_size: [512] (try 1)" has been stopped due to an error after 0 finished iterations
+[2018-06-05 11:23:18,773][INFO][general] The task "Exercise 2: update_rule: sgd_momentum - dropout: 0.5 - learning_rate: 0.01 - reg: 0.001 - hidden_size: [512] (try 1)" has been added to queue
+[2018-06-05 11:23:18,780][INFO][general] The task "Exercise 2: update_rule: sgd_momentum - dropout: 0.5 - learning_rate: 0.01 - reg: 0.001 - hidden_size: [512] (try 1)" has been started, beginning with iteration 0
+[2018-06-05 11:23:23,986][ERROR][general] The task "Exercise 2: update_rule: sgd_momentum - dropout: 0.5 - learning_rate: 0.01 - reg: 0.001 - hidden_size: [512] (try 1)" has been stopped due to an error after 0 finished iterations
+[2018-06-05 11:24:30,352][INFO][general] The task "Exercise 2: update_rule: sgd_momentum - dropout: 0.5 - learning_rate: 0.01 - reg: 0.001 - hidden_size: [512] (try 1)" has been added to queue
+[2018-06-05 11:24:30,357][INFO][general] The task "Exercise 2: update_rule: sgd_momentum - dropout: 0.5 - learning_rate: 0.01 - reg: 0.001 - hidden_size: [512] (try 1)" has been started, beginning with iteration 0
+[2018-06-05 11:25:20,615][INFO][general] Starting tensorboard for project "Exercise 2"...
+[2018-06-05 11:27:19,934][INFO][general] The task "Exercise 2: update_rule: sgd_momentum - dropout: 0.5 - learning_rate: 0.01 - reg: 0.001 - hidden_size: [512] (try 1)" has been paused after 2774 finished iterations
+[2018-06-05 11:28:08,960][INFO][general] The task "Exercise 2: update_rule: adam - dropout: 0.5 - hidden_size: [128, 128, 128] (try 2)" has been added to queue
+[2018-06-05 11:28:08,966][INFO][general] The task "Exercise 2: update_rule: adam - dropout: 0.5 - hidden_size: [128, 128, 128] (try 2)" has been started, beginning with iteration 0
+[2018-06-05 11:28:29,390][INFO][general] The task "Exercise 2: update_rule: adam - dropout: 0.5 - hidden_size: [128, 128, 128] (try 2)" has been paused after 481 finished iterations
+[2018-06-05 11:28:42,035][INFO][general] Preset "update_rule: adam - hidden_size: [256]" has been added
+[2018-06-05 11:28:55,429][INFO][general] The task "Exercise 2: update_rule: adam - hidden_size: [256] (try 0)" has been added to queue
+[2018-06-05 11:28:55,435][INFO][general] The task "Exercise 2: update_rule: adam - hidden_size: [256] (try 0)" has been started, beginning with iteration 0
+[2018-06-05 11:38:52,671][INFO][general] The task "Exercise 2: update_rule: adam - hidden_size: [256] (try 0)" has been paused after 8641 finished iterations
+[2018-06-05 11:38:59,789][INFO][general] The task "Exercise 2: update_rule: adam - hidden_size: [256] (try 1)" has been added to queue
+[2018-06-05 11:38:59,795][INFO][general] The task "Exercise 2: update_rule: adam - hidden_size: [256] (try 1)" has been started, beginning with iteration 0
+[2018-06-05 11:39:04,914][ERROR][general] The task "Exercise 2: update_rule: adam - hidden_size: [256] (try 1)" has been stopped due to an error after 0 finished iterations
+[2018-06-05 11:40:11,111][INFO][general] The task "Exercise 2: update_rule: adam - hidden_size: [256] (try 1)" has been added to queue
+[2018-06-05 11:40:11,118][INFO][general] The task "Exercise 2: update_rule: adam - hidden_size: [256] (try 1)" has been started, beginning with iteration 0
+[2018-06-05 11:40:11,161][ERROR][general] The task "Exercise 2: update_rule: adam - hidden_size: [256] (try 1)" has been stopped due to an error after 0 finished iterations
+[2018-06-05 11:40:39,972][INFO][general] The task "Exercise 2: update_rule: adam - hidden_size: [256] (try 1)" has been added to queue
+[2018-06-05 11:40:39,979][INFO][general] The task "Exercise 2: update_rule: adam - hidden_size: [256] (try 1)" has been started, beginning with iteration 0
+[2018-06-05 11:40:45,216][ERROR][general] The task "Exercise 2: update_rule: adam - hidden_size: [256] (try 1)" has been stopped due to an error after 0 finished iterations
+[2018-06-05 11:41:04,687][INFO][general] The task "Exercise 2: update_rule: adam - hidden_size: [256] (try 1)" has been added to queue
+[2018-06-05 11:41:04,694][INFO][general] The task "Exercise 2: update_rule: adam - hidden_size: [256] (try 1)" has been started, beginning with iteration 0
+[2018-06-05 11:41:09,930][ERROR][general] The task "Exercise 2: update_rule: adam - hidden_size: [256] (try 1)" has been stopped due to an error after 0 finished iterations
+[2018-06-05 11:44:16,945][INFO][general] The task "Exercise 2: update_rule: adam - hidden_size: [256] (try 1)" has been added to queue
+[2018-06-05 11:44:16,951][INFO][general] The task "Exercise 2: update_rule: adam - hidden_size: [256] (try 1)" has been started, beginning with iteration 0
+[2018-06-05 11:44:22,436][ERROR][general] The task "Exercise 2: update_rule: adam - hidden_size: [256] (try 1)" has been stopped due to an error after 0 finished iterations
+[2018-06-05 11:45:04,125][INFO][general] The task "Exercise 2: update_rule: adam - hidden_size: [256] (try 1)" has been added to queue
+[2018-06-05 11:45:04,131][INFO][general] The task "Exercise 2: update_rule: adam - hidden_size: [256] (try 1)" has been started, beginning with iteration 0
+[2018-06-05 11:51:59,663][INFO][general] Preset "update_rule: adam - hidden_size: [512]" has been added
+[2018-06-05 11:52:05,714][INFO][general] The task "Exercise 2: update_rule: adam - hidden_size: [512] (try 0)" has been added to queue
+[2018-06-05 11:52:37,398][INFO][general] The task "Exercise 2: update_rule: adam - hidden_size: [256] (try 1)" has been paused after 9767 finished iterations
+[2018-06-05 11:52:37,401][INFO][general] The task "Exercise 2: update_rule: adam - hidden_size: [512] (try 0)" has been started, beginning with iteration 0
+[2018-06-05 11:57:57,397][INFO][general] The task "Exercise 2: update_rule: adam - hidden_size: [512] (try 0)" has been paused after 4236 finished iterations
+[2018-06-05 11:58:01,819][INFO][general] The task "Exercise 2: update_rule: adam - hidden_size: [256] (try 2)" has been added to queue
+[2018-06-05 11:58:01,826][INFO][general] The task "Exercise 2: update_rule: adam - hidden_size: [256] (try 2)" has been started, beginning with iteration 0
+[2018-06-05 12:06:29,030][INFO][general] The task "Exercise 2: update_rule: adam - hidden_size: [256] (try 2)" has been paused after 11281 finished iterations
+[2018-06-05 12:06:31,550][INFO][general] The task "Exercise 2: update_rule: adam - hidden_size: [256] (try 3)" has been added to queue
+[2018-06-05 12:06:31,555][INFO][general] The task "Exercise 2: update_rule: adam - hidden_size: [256] (try 3)" has been started, beginning with iteration 0
+[2018-06-05 12:06:34,010][ERROR][general] The task "Exercise 2: update_rule: adam - hidden_size: [256] (try 3)" has been stopped due to an error after 0 finished iterations
+[2018-06-05 12:07:41,144][INFO][general] The task "Exercise 2: update_rule: adam - hidden_size: [256] (try 3)" has been added to queue
+[2018-06-05 12:07:41,153][INFO][general] The task "Exercise 2: update_rule: adam - hidden_size: [256] (try 3)" has been started, beginning with iteration 0
+[2018-06-05 12:24:54,578][INFO][general] The task "Exercise 2: update_rule: adam - hidden_size: [256] (try 3)" has been paused after 24961 finished iterations
+[2018-06-05 12:25:15,828][INFO][general] Preset "data_augmentation: True" has been added
+[2018-06-05 12:25:20,353][INFO][general] The task "Exercise 2: data_augmentation: True (try 0)" has been added to queue
+[2018-06-05 12:25:20,359][INFO][general] The task "Exercise 2: data_augmentation: True (try 0)" has been started, beginning with iteration 0
+[2018-06-05 12:25:22,887][ERROR][general] The task "Exercise 2: data_augmentation: True (try 0)" has been stopped due to an error after 0 finished iterations

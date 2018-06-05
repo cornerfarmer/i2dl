@@ -101,10 +101,7 @@ class Solver(object):
           training.
         """
         self.model = model
-        self.X_train = data['X_train']
-        self.y_train = data['y_train']
-        self.X_val = data['X_val']
-        self.y_val = data['y_val']
+        self.set_data(data)
 
         # Unpack keyword arguments
         self.update_rule = kwargs.pop('update_rule', 'sgd')
@@ -128,6 +125,12 @@ class Solver(object):
         self.update_rule = getattr(optim, self.update_rule)
 
         self._reset()
+
+    def set_data(self, data):
+        self.X_train = data['X_train']
+        self.y_train = data['y_train']
+        self.X_val = data['X_val']
+        self.y_val = data['y_val']
 
     def set_model(self, model):
         self.model = model

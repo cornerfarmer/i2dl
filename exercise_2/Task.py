@@ -1,24 +1,26 @@
 import sys
 sys.path.append('../../')
 import TaskPlan
-from exercise_code.data_utils import get_CIFAR10_data
+from exercise_code.data_utils import get_CIFAR10_data, data_augm
 import numpy as np
 from exercise_code.classifiers.fc_net import FullyConnectedNet
 import tensorflow as tf
 import pickle
 from exercise_code.solver import Solver
+from io import StringIO
+import matplotlib.pyplot as plt
 
 class Task(TaskPlan.Task):
 
     def __init__(self, preset, logger, subtask):
         super().__init__(preset, logger, subtask)
 
-        data = get_CIFAR10_data()
+        self.data = get_CIFAR10_data()
         full_data = {
-            'X_train': data['X_train'],
-            'y_train': data['y_train'],
-            'X_val': data['X_val'],
-            'y_val': data['y_val'],
+            'X_train': self.data['X_train'],
+            'y_train': self.data['y_train'],
+            'X_val': self.data['X_val'],
+            'y_val': self.data['y_val'],
         }
 
         self.net = FullyConnectedNet(self.preset.get_list('hidden_size')[:], weight_scale=self.preset.get_float('weight_scale'), use_batchnorm=self.preset.get_bool('use_batchnorm'), dropout=self.preset.get_float('dropout'), reg=self.preset.get_float('reg'))
@@ -34,6 +36,20 @@ class Task(TaskPlan.Task):
         pickle.dump({'fully_connected_net': self.net}, open(str(path / 'fully_connected_net.p'), 'wb'))
 
     def step(self, tensorboard_writer, current_iteration):
+        if self.preset.get_bool('data_augmentation') and current_iteration % int(self.data['X_train'].shape[0] / self.preset.get_int('batch_size')) == 0:
+            x_train, y_train = data_augm(self.data['X_train'], self.data['y_train'], 1, self.preset.get_float('scale_min'), self.preset.get_float('scale_max'))
+            full_data = {
+                'X_train': x_train,
+                'y_train': y_train,
+                'X_val': self.data['X_val'],
+                'y_val': self.data['y_val'],
+            }
+            self.solver.set_data(full_data)
+            self.logger.log("Doing data augm")
+            #s = StringIO()
+            #plt.imsave(s, (x_train[0] - x_train[0].min()) / (x_train[0].max() - x_train[0].min()) , format='png')
+            #tensorboard_writer.add_summary(tf.Summary(value=[tf.Summary.Value(tag="accuracy/training", image=tf.Summary.Image(encoded_image_string=s, width=32, height=32))]), current_iteration)
+
         loss = self.solver.step()
         tensorboard_writer.add_summary(tf.Summary(value=[tf.Summary.Value(tag="loss/training", simple_value=loss)]), current_iteration)
 

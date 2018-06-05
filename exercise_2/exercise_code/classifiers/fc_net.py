@@ -170,7 +170,7 @@ class FullyConnectedNet(object):
         ############################################################################
         hidden_dims.append(num_classes)
         for key, hidden_dim in enumerate(hidden_dims):
-            self.params['W' + str(key + 1)] = weight_scale * np.random.randn(input_dim, hidden_dim)
+            self.params['W' + str(key + 1)] = 2 / input_dim * np.random.randn(input_dim, hidden_dim)
             self.params['b' + str(key + 1)] = np.zeros(hidden_dim)
             if self.use_batchnorm and key < self.num_layers - 1:
                 self.params['bng' + str(key + 1)] = np.ones((hidden_dim,))
