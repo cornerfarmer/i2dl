@@ -617,3 +617,12 @@
 [2018-06-05 12:25:20,353][INFO][general] The task "Exercise 2: data_augmentation: True (try 0)" has been added to queue
 [2018-06-05 12:25:20,359][INFO][general] The task "Exercise 2: data_augmentation: True (try 0)" has been started, beginning with iteration 0
 [2018-06-05 12:25:22,887][ERROR][general] The task "Exercise 2: data_augmentation: True (try 0)" has been stopped due to an error after 0 finished iterations
+[2018-06-05 12:28:28,520][INFO][general] --------------------------------------------------
+[2018-06-05 12:28:34,009][INFO][general] The task "Exercise 2: data_augmentation: True (try 0)" has been added to queue
+[2018-06-05 12:28:34,016][INFO][general] The task "Exercise 2: data_augmentation: True (try 0)" has been started, beginning with iteration 0
+[2018-06-05 12:28:36,470][ERROR][general] The task "Exercise 2: data_augmentation: True (try 0)" has been stopped due to an error after 0 finished iterations
+[2018-06-05 12:29:40,781][INFO][general] --------------------------------------------------
+[2018-06-05 12:29:44,265][INFO][general] The task "Exercise 2: data_augmentation: True (try 0)" has been added to queue
+[2018-06-05 12:29:44,272][INFO][general] The task "Exercise 2: data_augmentation: True (try 0)" has been started, beginning with iteration 0
+[2018-06-05 12:30:22,443][INFO][general] Starting tensorboard for project "Exercise 1.1"...
+[2018-06-05 12:31:00,241][INFO][general] Starting tensorboard for project "Exercise 2"...
