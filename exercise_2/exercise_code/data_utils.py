@@ -93,64 +93,37 @@ def data_augm_image(image, scale_min, scale_max):
     return image
 
 
-def get_feature_extracted_CIFAR10_data(num_training=48000, num_validation=1000, num_test=1000):
-    # Load the raw CIFAR-10 data
-    cifar10_dir = 'datasets/'
-    X, y = load_CIFAR10(cifar10_dir)
-
-    # Subsample the data
-    # Our training set will be the first num_train points from the original
-    # training set.
-    mask = list(range(num_training))
-    X_train = X[mask]
-    y_train = y[mask]
-
-    # Our validation set will be num_validation points from the original
-    # training set.
-    mask = list(range(num_training, num_training + num_validation))
-    X_val = X[mask]
-    y_val = y[mask]
-
-    # We use a small subset of the training set as our test set.
-    mask = list(range(num_training + num_validation, num_training + num_validation + num_test))
-    X_test = X[mask]
-    y_test = y[mask]
-
-    # Normalize the data: subtract the mean image
-    mean_image = np.mean(X_train, axis=0)
-    X_train -= mean_image
-    X_val -= mean_image
-    X_test -= mean_image
-
+def extract_features_initial(data):
     num_color_bins = 10  # Number of bins in the color histogram
     feature_fns = [hog_feature, lambda img: color_histogram_hsv(img, nbin=num_color_bins)]
-    X_train_feats = extract_features(X_train, feature_fns, verbose=True)
-    X_val_feats = extract_features(X_val, feature_fns)
-    X_test_feats = extract_features(X_test, feature_fns)
+    X_train_feats = extract_features(data['X_train'], feature_fns, verbose=True)
+    X_val_feats = extract_features(data['X_val'], feature_fns)
 
     # Preprocessing: Subtract the mean feature
     mean_feat = np.mean(X_train_feats, axis=0, keepdims=True)
     X_train_feats -= mean_feat
     X_val_feats -= mean_feat
-    X_test_feats -= mean_feat
 
     # Preprocessing: Divide by standard deviation. This ensures that each feature
     # has roughly the same scale.
     std_feat = np.std(X_train_feats, axis=0, keepdims=True)
     X_train_feats /= std_feat
     X_val_feats /= std_feat
-    X_test_feats /= std_feat
 
-    # Preprocessing: Add a bias dimension
-    X_train = np.hstack([X_train_feats, np.ones((X_train_feats.shape[0], 1))])
-    X_val = np.hstack([X_val_feats, np.ones((X_val_feats.shape[0], 1))])
-    X_test = np.hstack([X_test_feats, np.ones((X_test_feats.shape[0], 1))])
     return {
-        'X_train': X_train, 'y_train': y_train,
-        'X_val': X_val, 'y_val': y_val,
-        'X_test': X_test, 'y_test': y_test,
-    }
+        'X_train': X_train_feats, 'y_train': data['y_train'],
+        'X_val': X_val_feats, 'y_val': data['y_val']
+    }, mean_feat, std_feat
 
+def extract_features_of_images(images, mean_feat, std_feat):
+    num_color_bins = 10  # Number of bins in the color histogram
+    feature_fns = [hog_feature, lambda img: color_histogram_hsv(img, nbin=num_color_bins)]
+    feats = extract_features(images, feature_fns, verbose=True)
+
+    feats -= mean_feat
+    feats /= std_feat
+
+    return feats
 
 def scoring_function(x, lin_exp_boundary, doubling_rate):
     assert np.all([x >= 0, x <= 1])
