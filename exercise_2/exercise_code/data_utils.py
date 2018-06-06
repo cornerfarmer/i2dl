@@ -84,7 +84,13 @@ def data_augm(images, labels, factor, scale_min, scale_max, transl_max):
 
 def data_augm_image(image, scale_min, scale_max, transl_max):
     #crop_image(image, scale_min, scale_max)
-    return translate_image(image, transl_max)
+    #return translate_image(image, transl_max)
+    return flip_image(image)
+
+def flip_image(image):
+    if np.random.rand() < .5:
+        image = image[:, ::-1, :]
+    return image
 
 def crop_image(image, scale_min, scale_max):
     img_size = image.shape[0]
@@ -109,8 +115,8 @@ def translate_image(image, transl_max):
 
 
 def extract_features_initial(data):
-    num_color_bins = 10  # Number of bins in the color histogram
-    feature_fns = [hog_feature, lambda img: color_histogram_hsv(img, nbin=num_color_bins)]
+    num_color_bins = 20  # Number of bins in the color histogram
+    feature_fns = [flatten, hog_feature, lambda img: color_histogram_hsv(img, nbin=num_color_bins)]
     X_train_feats = extract_features(data['X_train'], feature_fns, verbose=True)
     X_val_feats = extract_features(data['X_val'], feature_fns)
 

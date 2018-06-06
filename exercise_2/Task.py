@@ -16,6 +16,7 @@ class Task(TaskPlan.Task):
         super().__init__(preset, logger, subtask)
 
         self.data = get_CIFAR10_data()
+        #x_train, y_train = data_augm(self.data['X_train'], self.data['y_train'], 2, self.preset.get_float('scale_min'), self.preset.get_float('scale_max'), self.preset.get_int('translate_max'))
         full_data = {
             'X_train': self.data['X_train'],
             'y_train': self.data['y_train'],

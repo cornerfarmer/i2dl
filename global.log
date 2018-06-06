@@ -626,3 +626,106 @@
 [2018-06-05 12:29:44,272][INFO][general] The task "Exercise 2: data_augmentation: True (try 0)" has been started, beginning with iteration 0
 [2018-06-05 12:30:22,443][INFO][general] Starting tensorboard for project "Exercise 1.1"...
 [2018-06-05 12:31:00,241][INFO][general] Starting tensorboard for project "Exercise 2"...
+[2018-06-05 12:38:46,892][INFO][general] The task "Exercise 2: data_augmentation: True (try 0)" has been finished after 10000 finished iterations
+[2018-06-05 12:42:18,539][INFO][general] The task "Exercise 2: data_augmentation: True (try 0)" has been added to queue
+[2018-06-05 12:42:18,544][INFO][general] The task "Exercise 2: data_augmentation: True (try 0)" has been started, beginning with iteration 10000
+[2018-06-05 12:51:39,098][INFO][general] The task "Exercise 2: data_augmentation: True (try 0)" has been paused after 22361 finished iterations
+[2018-06-05 20:41:52,376][INFO][general] --------------------------------------------------
+[2018-06-05 20:42:54,557][INFO][general] The task "Exercise 2: data_augmentation: True (try 1)" has been added to queue
+[2018-06-05 20:42:54,562][INFO][general] The task "Exercise 2: data_augmentation: True (try 1)" has been started, beginning with iteration 0
+[2018-06-05 20:43:02,974][INFO][general] Starting tensorboard for project "Exercise 2"...
+[2018-06-05 20:51:04,809][INFO][general] The task "Exercise 2: features + augm (try 0)" has been added to queue
+[2018-06-05 20:51:06,979][INFO][general] The task "Exercise 2: data_augmentation: True (try 1)" has been paused after 6830 finished iterations
+[2018-06-05 20:51:06,982][INFO][general] The task "Exercise 2: features + augm (try 0)" has been started, beginning with iteration 0
+[2018-06-05 22:17:32,118][INFO][general] The task "Exercise 2: features (try 2)" has been added to queue
+[2018-06-05 22:17:48,980][INFO][general] The task "Exercise 2: features + augm (try 0)" has been paused after 18788 finished iterations
+[2018-06-05 22:17:48,983][INFO][general] The task "Exercise 2: features (try 2)" has been started, beginning with iteration 0
+[2018-06-05 22:29:19,665][INFO][general] The task "Exercise 2: features (try 2)" has been paused after 73175 finished iterations
+[2018-06-05 22:38:10,087][INFO][general] The task "Exercise 2: features (try 3)" has been added to queue
+[2018-06-05 22:38:10,091][INFO][general] The task "Exercise 2: features (try 3)" has been started, beginning with iteration 0
+[2018-06-05 22:45:46,236][INFO][general] Preset "features + batch: 64" has been added
+[2018-06-05 22:45:50,223][INFO][general] The task "Exercise 2: features + batch: 64 (try 0)" has been added to queue
+[2018-06-05 22:45:51,410][INFO][general] The task "Exercise 2: features (try 3)" has been paused after 46055 finished iterations
+[2018-06-05 22:45:51,414][INFO][general] The task "Exercise 2: features + batch: 64 (try 0)" has been started, beginning with iteration 0
+[2018-06-05 22:53:42,022][INFO][general] The task "Exercise 2: features (try 4)" has been added to queue
+[2018-06-05 22:54:03,240][INFO][general] The task "Exercise 2: features + batch: 64 (try 0)" has been finished after 100000 finished iterations
+[2018-06-05 22:54:03,244][INFO][general] The task "Exercise 2: features (try 4)" has been started, beginning with iteration 0
+[2018-06-05 23:13:03,936][INFO][general] Preset "hidden_size: [512] - learning_rate: 0.01 - extract_features: True - update_rule: sgd_momentum" has been added
+[2018-06-05 23:13:15,753][INFO][general] The task "Exercise 2: hidden_size: [512] - learning_rate: 0.01 - extract_features: True - update_rule: sgd_momentum (try 0)" has been added to queue
+[2018-06-05 23:13:23,950][INFO][general] The task "Exercise 2: features (try 4)" has been paused after 98831 finished iterations
+[2018-06-05 23:13:23,954][INFO][general] The task "Exercise 2: hidden_size: [512] - learning_rate: 0.01 - extract_features: True - update_rule: sgd_momentum (try 0)" has been started, beginning with iteration 0
+[2018-06-05 23:24:44,240][INFO][general] Preset "features + deep" has been added
+[2018-06-05 23:24:49,792][INFO][general] The task "Exercise 2: features + deep (try 0)" has been added to queue
+[2018-06-05 23:27:12,258][INFO][general] The task "Exercise 2: hidden_size: [512] - learning_rate: 0.01 - extract_features: True - update_rule: sgd_momentum (try 0)" has been paused after 61087 finished iterations
+[2018-06-05 23:27:12,262][INFO][general] The task "Exercise 2: features + deep (try 0)" has been started, beginning with iteration 0
+[2018-06-05 23:36:59,960][INFO][general] The task "Exercise 2: features + deep (try 0)" has been paused after 12996 finished iterations
+[2018-06-05 23:37:32,727][INFO][general] Preset "features + deep" has been changed
+[2018-06-05 23:37:34,926][INFO][general] The task "Exercise 2: features + deep (try 1)" has been added to queue
+[2018-06-05 23:37:34,930][INFO][general] The task "Exercise 2: features + deep (try 1)" has been started, beginning with iteration 0
+[2018-06-05 23:44:54,087][INFO][general] Preset "features + deep" has been changed
+[2018-06-05 23:44:56,638][INFO][general] The task "Exercise 2: features + deep (try 2)" has been added to queue
+[2018-06-05 23:44:57,589][INFO][general] The task "Exercise 2: features + deep (try 1)" has been paused after 6075 finished iterations
+[2018-06-05 23:44:57,594][INFO][general] The task "Exercise 2: features + deep (try 2)" has been started, beginning with iteration 0
+[2018-06-05 23:54:07,889][INFO][general] Preset "features + deep" has been changed
+[2018-06-05 23:54:15,744][INFO][general] The task "Exercise 2: features + deep (try 3)" has been added to queue
+[2018-06-05 23:54:16,338][INFO][general] The task "Exercise 2: features + deep (try 2)" has been paused after 14347 finished iterations
+[2018-06-05 23:54:16,341][INFO][general] The task "Exercise 2: features + deep (try 3)" has been started, beginning with iteration 0
+[2018-06-06 00:14:45,205][INFO][general] The task "Exercise 2: features + deep (try 4)" has been added to queue
+[2018-06-06 00:14:49,476][INFO][general] The task "Exercise 2: features + deep (try 4)" has been cancelled
+[2018-06-06 00:15:02,040][INFO][general] Preset "features + deep" has been changed
+[2018-06-06 00:15:04,316][INFO][general] The task "Exercise 2: features + deep (try 4)" has been added to queue
+[2018-06-06 00:15:08,911][INFO][general] The task "Exercise 2: features + deep (try 3)" has been paused after 50114 finished iterations
+[2018-06-06 00:15:08,915][INFO][general] The task "Exercise 2: features + deep (try 4)" has been started, beginning with iteration 0
+[2018-06-06 00:15:11,352][ERROR][general] The task "Exercise 2: features + deep (try 4)" has been stopped due to an error after 0 finished iterations
+[2018-06-06 00:15:24,668][INFO][general] The task "Exercise 2: features + deep (try 4)" has been added to queue
+[2018-06-06 00:15:24,672][INFO][general] The task "Exercise 2: features + deep (try 4)" has been started, beginning with iteration 0
+[2018-06-06 00:20:22,836][INFO][general] Preset "features + deep" has been changed
+[2018-06-06 00:20:27,115][INFO][general] The task "Exercise 2: features + deep (try 5)" has been added to queue
+[2018-06-06 00:20:27,948][INFO][general] The task "Exercise 2: features + deep (try 4)" has been paused after 3808 finished iterations
+[2018-06-06 00:20:27,952][INFO][general] The task "Exercise 2: features + deep (try 5)" has been started, beginning with iteration 0
+[2018-06-06 00:37:20,329][INFO][general] Preset "features + deep" has been changed
+[2018-06-06 00:37:24,517][INFO][general] The task "Exercise 2: features + deep (try 6)" has been added to queue
+[2018-06-06 00:46:06,330][INFO][general] The task "Exercise 2: features + deep (try 5)" has been paused after 74967 finished iterations
+[2018-06-06 00:46:06,333][INFO][general] The task "Exercise 2: features + deep (try 6)" has been started, beginning with iteration 0
+[2018-06-06 00:54:53,863][INFO][general] Preset "reg: 0.001 - hidden_size: [1024] - dropout: 0.5 - learning_rate: 0.01 - extract_features: True - update_rule: sgd_momentum" has been added
+[2018-06-06 01:06:10,698][INFO][general] Preset "features + 1024" has been added
+[2018-06-06 01:06:24,157][INFO][general] The task "Exercise 2: features + 1024 (try 0)" has been added to queue
+[2018-06-06 01:06:25,183][INFO][general] The task "Exercise 2: features + deep (try 6)" has been paused after 56045 finished iterations
+[2018-06-06 01:06:25,186][INFO][general] The task "Exercise 2: features + 1024 (try 0)" has been started, beginning with iteration 0
+[2018-06-06 01:23:11,016][INFO][general] Preset "features + 1024" has been changed
+[2018-06-06 01:23:13,977][INFO][general] The task "Exercise 2: features + 1024 (try 1)" has been added to queue
+[2018-06-06 01:23:14,853][INFO][general] The task "Exercise 2: features + 1024 (try 0)" has been paused after 65562 finished iterations
+[2018-06-06 01:23:14,856][INFO][general] The task "Exercise 2: features + 1024 (try 1)" has been started, beginning with iteration 0
+[2018-06-06 01:33:38,609][INFO][general] The task "Exercise 2: features + 1024 (try 1)" has been paused after 19529 finished iterations
+[2018-06-06 01:33:40,773][INFO][general] The task "Exercise 2: features + 1024 (try 2)" has been added to queue
+[2018-06-06 01:33:40,778][INFO][general] The task "Exercise 2: features + 1024 (try 2)" has been started, beginning with iteration 0
+[2018-06-06 01:35:09,162][ERROR][general] The task "Exercise 2: features + 1024 (try 2)" has been stopped due to an error after 0 finished iterations
+[2018-06-06 01:35:11,661][INFO][general] --------------------------------------------------
+[2018-06-06 01:35:24,020][INFO][general] The task "Exercise 2: features + 1024 (try 3)" has been added to queue
+[2018-06-06 01:35:24,025][INFO][general] The task "Exercise 2: features + 1024 (try 3)" has been started, beginning with iteration 0
+[2018-06-06 01:35:29,984][INFO][general] Starting tensorboard for project "Exercise 2"...
+[2018-06-06 01:40:01,211][INFO][general] The task "Exercise 2: features + 1024 (try 3)" has been paused after 4716 finished iterations
+[2018-06-06 01:40:05,286][INFO][general] The task "Exercise 2: features (try 5)" has been added to queue
+[2018-06-06 01:40:05,291][INFO][general] The task "Exercise 2: features (try 5)" has been started, beginning with iteration 0
+[2018-06-06 01:40:07,644][ERROR][general] The task "Exercise 2: features (try 5)" has been stopped due to an error after 0 finished iterations
+[2018-06-06 01:41:35,825][INFO][general] The task "Exercise 2: features (try 5)" has been added to queue
+[2018-06-06 01:41:35,831][INFO][general] The task "Exercise 2: features (try 5)" has been started, beginning with iteration 0
+[2018-06-06 01:41:38,177][ERROR][general] The task "Exercise 2: features (try 5)" has been stopped due to an error after 0 finished iterations
+[2018-06-06 01:45:48,842][INFO][general] The task "Exercise 2: features + 1024 (try 4)" has been added to queue
+[2018-06-06 01:45:48,847][INFO][general] The task "Exercise 2: features + 1024 (try 4)" has been started, beginning with iteration 0
+[2018-06-06 01:45:51,211][ERROR][general] The task "Exercise 2: features + 1024 (try 4)" has been stopped due to an error after 0 finished iterations
+[2018-06-06 01:46:07,770][INFO][general] The task "Exercise 2: features + 1024 (try 5)" has been added to queue
+[2018-06-06 01:46:07,774][INFO][general] The task "Exercise 2: features + 1024 (try 5)" has been started, beginning with iteration 0
+[2018-06-06 01:56:23,111][INFO][general] The task "Exercise 2: features + 1024 (try 5)" has been paused after 18489 finished iterations
+[2018-06-06 01:56:37,057][INFO][general] The task "Exercise 2: features (try 6)" has been added to queue
+[2018-06-06 01:56:37,061][INFO][general] The task "Exercise 2: features (try 6)" has been started, beginning with iteration 0
+[2018-06-06 01:56:39,429][ERROR][general] The task "Exercise 2: features (try 6)" has been stopped due to an error after 0 finished iterations
+[2018-06-06 01:57:29,569][INFO][general] The task "Exercise 2: features (try 6)" has been added to queue
+[2018-06-06 01:57:29,575][INFO][general] The task "Exercise 2: features (try 6)" has been started, beginning with iteration 0
+[2018-06-06 02:10:49,942][INFO][general] The task "Exercise 2: features (try 6)" has been paused after 15902 finished iterations
+[2018-06-06 02:12:19,570][INFO][general] The task "Exercise 2: features (try 6)" has been added to queue
+[2018-06-06 02:12:19,575][INFO][general] The task "Exercise 2: features (try 6)" has been started, beginning with iteration 15902
+[2018-06-06 02:19:21,510][INFO][general] The task "Exercise 2: features (try 6)" has been paused after 23413 finished iterations
+[2018-06-06 02:20:23,482][INFO][general] The task "Exercise 2: features (try 6)" has been added to queue
+[2018-06-06 02:20:23,487][INFO][general] The task "Exercise 2: features (try 6)" has been started, beginning with iteration 23413
+[2018-06-06 02:28:04,139][INFO][general] The task "Exercise 2: features (try 6)" has been paused after 31456 finished iterations

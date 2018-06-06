@@ -5,6 +5,9 @@ import numpy as np
 from scipy.ndimage import uniform_filter
 
 
+def flatten(im):
+    return im.flatten()
+
 def extract_features(imgs, feature_fns, verbose=False):
     """
     Given pixel data for images and several feature functions that can operate on
