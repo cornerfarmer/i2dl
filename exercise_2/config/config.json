@@ -280,18 +280,18 @@
     "name": "update_rule: adam - dropout: 0.7 - hidden_size: [512, 256, 256, 128, 128, 128] - use_batchnorm: True - learning_rate: 0.001"
   },
   {
-    "uuid": "30a034c2-8e36-4a23-a7a3-03ca5ea0cff9",
     "config": {
       "reg": 0.001,
       "hidden_size": [
         512
       ],
       "dropout": 0.5,
-      "learning_rate": 0.01,
+      "learning_rate": 0.001,
       "extract_features": true,
       "update_rule": "sgd_momentum"
     },
-    "name": "features"
+    "name": "features",
+    "uuid": "30a034c2-8e36-4a23-a7a3-03ca5ea0cff9"
   },
   {
     "uuid": "8588d14a-81e6-4527-bdae-5a50c5b2e9c6",
@@ -434,7 +434,7 @@
   {
     "name": "features + 1024",
     "config": {
-      "reg": 0.001,
+      "reg": 0.002,
       "hidden_size": [
         2048
       ],
