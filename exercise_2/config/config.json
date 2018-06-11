@@ -17,6 +17,7 @@
       "dropout": 0.75,
       "learning_rate": 0.0001,
       "scale_max": 1.3,
+      "translate_max": 10,
       "val_interval": 240
     },
     "name": "Default"
@@ -279,18 +280,18 @@
     "name": "update_rule: adam - dropout: 0.7 - hidden_size: [512, 256, 256, 128, 128, 128] - use_batchnorm: True - learning_rate: 0.001"
   },
   {
-    "uuid": "30a034c2-8e36-4a23-a7a3-03ca5ea0cff9",
     "config": {
       "reg": 0.001,
       "hidden_size": [
         512
       ],
       "dropout": 0.5,
-      "learning_rate": 0.01,
+      "learning_rate": 0.001,
       "extract_features": true,
       "update_rule": "sgd_momentum"
     },
-    "name": "features"
+    "name": "features",
+    "uuid": "30a034c2-8e36-4a23-a7a3-03ca5ea0cff9"
   },
   {
     "uuid": "8588d14a-81e6-4527-bdae-5a50c5b2e9c6",
@@ -372,5 +373,76 @@
       "update_rule": "sgd_momentum"
     },
     "name": "features + augm"
+  },
+  {
+    "name": "features + batch: 64",
+    "config": {
+      "reg": 0.001,
+      "batch_size": 64,
+      "hidden_size": [
+        512
+      ],
+      "dropout": 0.5,
+      "learning_rate": 0.01,
+      "extract_features": true,
+      "update_rule": "sgd_momentum"
+    },
+    "uuid": "1e08640e-fc3c-40c8-91f7-f5fd66631251"
+  },
+  {
+    "config": {
+      "hidden_size": [
+        512
+      ],
+      "learning_rate": 0.01,
+      "extract_features": true,
+      "update_rule": "sgd_momentum"
+    },
+    "uuid": "1efed865-4b1f-418b-b172-9a8dabdccd1b",
+    "name": "hidden_size: [512] - learning_rate: 0.01 - extract_features: True - update_rule: sgd_momentum"
+  },
+  {
+    "name": "features + deep",
+    "config": {
+      "reg": 0.0001,
+      "hidden_size": [
+        512,
+        256,
+        128
+      ],
+      "dropout": 0.5,
+      "learning_rate": 0.0001,
+      "extract_features": true,
+      "update_rule": "adam"
+    },
+    "uuid": "a8e3b1ff-25a3-4bf5-97e2-3edf0281c87c"
+  },
+  {
+    "config": {
+      "reg": 0.001,
+      "hidden_size": [
+        1024
+      ],
+      "dropout": 0.5,
+      "learning_rate": 0.01,
+      "extract_features": true,
+      "update_rule": "sgd_momentum"
+    },
+    "uuid": "94710bb0-7059-4d4d-9575-e09d1926fc5f",
+    "name": "reg: 0.001 - hidden_size: [1024] - dropout: 0.5 - learning_rate: 0.01 - extract_features: True - update_rule: sgd_momentum"
+  },
+  {
+    "name": "features + 1024",
+    "config": {
+      "reg": 0.002,
+      "hidden_size": [
+        2048
+      ],
+      "dropout": 0.5,
+      "learning_rate": 0.01,
+      "extract_features": true,
+      "update_rule": "sgd_momentum"
+    },
+    "uuid": "e300cb18-2349-4e5b-adae-1f3786b661d1"
   }
 ]
