@@ -1,0 +1,20 @@
+[
+  {
+    "uuid": "c8fd7bd9-8193-49d3-b36f-cb037ef725b5",
+    "config": {
+      "batch_size": 64,
+      "val_interval": 240
+    },
+    "name": "Default",
+    "abstract": true,
+    "creation_time": 1528757942.834108
+  },
+  {
+    "name": "Empty",
+    "base": "c8fd7bd9-8193-49d3-b36f-cb037ef725b5",
+    "abstract": false,
+    "config": {},
+    "uuid": "a28e6059-50fe-4e23-a95a-f8518ea667ed",
+    "creation_time": 1528758014.576262
+  }
+]

@@ -53,7 +53,6 @@ class ClassificationCNN(nn.Module):
         ########################################################################
 
         self.conv = nn.Conv2d(channels, num_filters, kernel_size, padding=int(kernel_size / 2), stride=stride_conv)
-        self.conv.weight.data.mul_(weight_scale)
         self.pool = pool
         self.stride_pool = stride_pool
         self.dropout = dropout
@@ -83,7 +82,6 @@ class ClassificationCNN(nn.Module):
         # layers.                                                              #
         ########################################################################
         x = F.max_pool2d(F.relu(self.conv(x)), self.pool, stride=self.stride_pool)
-        print(x.size())
         x = x.view(-1, self.num_flat_features(x))
        # x = F.dropout(x, self.dropout)
         x = F.relu(self.fc1(x))

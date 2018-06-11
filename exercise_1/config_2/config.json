@@ -9,19 +9,22 @@
       "learning_rate": 0.01,
       "momentum": 0
     },
-    "uuid": "a6760e89-5c00-4a0f-8c9d-c9ed4b019119"
+    "uuid": "a6760e89-5c00-4a0f-8c9d-c9ed4b019119",
+    "creation_time": 1528757745.782858
   },
   {
     "config": {},
     "uuid": "71d07224-4537-4d4e-81b3-2bde11876c9c",
-    "name": "empty"
+    "name": "empty",
+    "creation_time": 1528757745.782872
   },
   {
     "config": {
       "learning_rate": 0.001
     },
     "name": "learning_rate: 0.001",
-    "uuid": "315f6ef2-3a35-4dcb-a769-78a6290f1e80"
+    "uuid": "315f6ef2-3a35-4dcb-a769-78a6290f1e80",
+    "creation_time": 1528757745.782883
   },
   {
     "config": {
@@ -29,7 +32,8 @@
       "reg": 2
     },
     "uuid": "1746c8bd-853c-4019-944f-990c6b51d3bb",
-    "name": "learning_rate: 0.001 - reg: 2"
+    "name": "learning_rate: 0.001 - reg: 2",
+    "creation_time": 1528757745.782892
   },
   {
     "config": {
@@ -38,7 +42,8 @@
       "hidden_size": 128
     },
     "name": "learning_rate: 0.001 - reg: 1 - hidden_size: 128",
-    "uuid": "822b0808-fac6-480f-97ea-ad7a4b49c1a4"
+    "uuid": "822b0808-fac6-480f-97ea-ad7a4b49c1a4",
+    "creation_time": 1528757745.782901
   },
   {
     "config": {
@@ -46,7 +51,8 @@
       "hidden_size": 128
     },
     "uuid": "492018f0-b7bf-4e0a-a4ce-6920cac76588",
-    "name": "learning_rate: 0.001 - hidden_size: 128"
+    "name": "learning_rate: 0.001 - hidden_size: 128",
+    "creation_time": 1528757745.782909
   },
   {
     "config": {
@@ -55,7 +61,8 @@
       "hidden_size": 128
     },
     "name": "learning_rate: 0.001 - reg: 0.1 - hidden_size: 128",
-    "uuid": "409143b1-76f4-4b80-8671-d3f0d03f547b"
+    "uuid": "409143b1-76f4-4b80-8671-d3f0d03f547b",
+    "creation_time": 1528757745.782917
   },
   {
     "config": {
@@ -64,7 +71,8 @@
       "hidden_size": 128
     },
     "uuid": "53669dea-d9c1-4bd1-97cd-de7376d359b3",
-    "name": "learning_rate: 0.001 - reg: 0.9 - hidden_size: 128"
+    "name": "learning_rate: 0.001 - reg: 0.9 - hidden_size: 128",
+    "creation_time": 1528757745.782925
   },
   {
     "config": {
@@ -73,14 +81,16 @@
       "hidden_size": 128
     },
     "uuid": "80bbb5be-0e82-4024-a153-6e959c70036d",
-    "name": "learning_rate: 0.001 - reg: 0.8 - hidden_size: 128"
+    "name": "learning_rate: 0.001 - reg: 0.8 - hidden_size: 128",
+    "creation_time": 1528757745.782933
   },
   {
     "config": {
       "learning_rate": 0
     },
     "uuid": "5c48ab06-0d21-413b-aee9-a0d4a8e25ddb",
-    "name": "learning_rate: 0"
+    "name": "learning_rate: 0",
+    "creation_time": 1528757745.782941
   },
   {
     "config": {
@@ -88,7 +98,8 @@
       "momentum": 0.9
     },
     "uuid": "672e52bd-6ef2-4cc1-91ba-ff952429a50e",
-    "name": "learning_rate: 0.001 - momentum: 0.9"
+    "name": "learning_rate: 0.001 - momentum: 0.9",
+    "creation_time": 1528757745.782949
   },
   {
     "config": {
@@ -96,7 +107,8 @@
       "momentum": 0.9
     },
     "uuid": "adda552f-903b-4008-beb2-cf8c28d02bb8",
-    "name": "learning_rate: 0.0001 - momentum: 0.9"
+    "name": "learning_rate: 0.0001 - momentum: 0.9",
+    "creation_time": 1528757745.782959
   },
   {
     "config": {
@@ -105,7 +117,8 @@
       "dropout": 0.5
     },
     "uuid": "f1ed0dbe-1d48-491b-a8c1-ca056f062135",
-    "name": "learning_rate: 0.0001 - momentum: 0.9 - dropout: 0.5"
+    "name": "learning_rate: 0.0001 - momentum: 0.9 - dropout: 0.5",
+    "creation_time": 1528757745.782967
   },
   {
     "config": {
@@ -114,6 +127,7 @@
       "dropout": 0.25
     },
     "uuid": "e401af28-77d4-43f0-afb0-1faddcd79a17",
-    "name": "learning_rate: 0.0001 - momentum: 0.9 - dropout: 0.25"
+    "name": "learning_rate: 0.0001 - momentum: 0.9 - dropout: 0.25",
+    "creation_time": 1528757745.782975
   }
 ]

@@ -7,11 +7,13 @@
       "batch_size": 200,
       "reg": 50000.0,
       "learning_rate": 1e-07
-    }
+    },
+    "creation_time": 1528757745.781951
   },
   {
     "uuid": "f82d6508-f72c-48ae-abb4-d7d292287800",
     "name": "Basic",
-    "config": {}
+    "config": {},
+    "creation_time": 1528757745.781976
   }
 ]

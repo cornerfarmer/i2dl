@@ -16,7 +16,7 @@ class Solver(object):
         optim_args_merged = self.default_adam_args.copy()
         optim_args_merged.update(optim_args)
         self.optim_args = optim_args_merged
-        self.optim = optim
+        self.optimF = optim
         self.loss_func = loss_func
 
         self._reset_histories()
@@ -30,6 +30,9 @@ class Solver(object):
         self.val_acc_history = []
         self.val_loss_history = []
 
+    def set_model(self, model):
+        self.optim = self.optimF(model.parameters(), **self.optim_args)
+
     def train(self, model, train_loader, val_loader, num_epochs=10, log_nth=0):
         """
         Train a given model with the provided data.
@@ -41,7 +44,7 @@ class Solver(object):
         - num_epochs: total number of training epochs
         - log_nth: log training accuracy and loss every nth iteration
         """
-        optim = self.optim(model.parameters(), **self.optim_args)
+        self.set_model(model)
         self._reset_histories()
         iter_per_epoch = len(train_loader)
         device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
@@ -69,9 +72,50 @@ class Solver(object):
         #   ...                                                                #
         ########################################################################
         
-        pass
+        for e in range(num_epochs):
+            train_iterator = iter(train_loader)
+            for i in range(iter_per_epoch):
 
+                train_acc, train_loss = self.step(model, train_iterator)
+                self.train_loss_history.append(train_loss)
+
+                if i % log_nth == 0:
+                    print("[Iteration " + str(i) + "/" + str(iter_per_epoch) + "] TRAIN loss: " + str(self.train_loss_history[-1]))
+
+            self.train_acc_history.append(train_acc)
+            print("[Epoch " + str(e) + "/" + str(num_epochs) + "] TRAIN acc: " + str(self.train_acc_history[-1]) + "/" + str(self.train_loss_history[-1]))
+
+            val_acc, val_loss = self.validate(model, val_loader)
+            self.val_acc_history.append(val_acc)
+            self.val_loss_history.append(val_loss)
+            print("[Epoch " + str(e) + "/" + str(num_epochs) + "] VAL acc: " + str(self.val_acc_history[-1]) + "/" + str(self.val_loss_history[-1]))
         ########################################################################
         #                             END OF YOUR CODE                         #
         ########################################################################
         print('FINISH.')
+
+    def validate(self, model, val_loader):
+        correct = 0
+        loss_val = 0
+        counter = 0
+        for batch in val_loader:
+            output = model(batch[0])
+            _, predicted = torch.max(output.data, 1)
+            correct += (predicted == batch[1]).sum().item()
+            loss_val += self.loss_func(output, batch[1]).item()
+            counter += 1
+
+        return correct / len(val_loader.dataset), loss_val / counter
+
+    def step(self, model, train_iterator):
+        batch = next(train_iterator)
+
+        self.optim.zero_grad()
+        output = model(batch[0])
+        _, predicted = torch.max(output.data, 1)
+
+        loss = self.loss_func(output, batch[1])
+        loss.backward()
+
+        self.optim.step()
+        return (predicted == batch[1]).sum().item() / len(batch[1]), loss.item()
