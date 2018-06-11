@@ -3,7 +3,6 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
-
 class ClassificationCNN(nn.Module):
     """
     A PyTorch implementation of a three-layer convolutional network
@@ -53,7 +52,15 @@ class ClassificationCNN(nn.Module):
         # will not coincide with the Jupyter notebook cell.                    #
         ########################################################################
 
-        pass
+        self.conv = nn.Conv2d(channels, num_filters, kernel_size, padding=int(kernel_size / 2), stride=stride_conv)
+        self.conv.weight.data.mul_(weight_scale)
+        self.pool = pool
+        self.stride_pool = stride_pool
+        self.dropout = dropout
+
+        # an affine operation: y = Wx + b
+        self.fc1 = nn.Linear(num_filters * (height // pool) * (width // pool), hidden_dim)
+        self.fc2 = nn.Linear(hidden_dim, num_classes)
     
         ############################################################################
         #                             END OF YOUR CODE                             #
@@ -75,14 +82,28 @@ class ClassificationCNN(nn.Module):
         # transition from the spatial input image to the flat fully connected  #
         # layers.                                                              #
         ########################################################################
-
-        pass
-    
+        x = F.max_pool2d(F.relu(self.conv(x)), self.pool, stride=self.stride_pool)
+        print(x.size())
+        x = x.view(-1, self.num_flat_features(x))
+       # x = F.dropout(x, self.dropout)
+        x = F.relu(self.fc1(x))
+        x = self.fc2(x)
         ########################################################################
         #                             END OF YOUR CODE                         #
         ########################################################################
 
         return x
+
+    def num_flat_features(self, x):
+        """
+        Computes the number of features if the spatial input x is transformed
+        to a 1D flat input.
+        """
+        size = x.size()[1:]  # all dimensions except the batch dimension
+        num_features = 1
+        for s in size:
+            num_features *= s
+        return num_features
 
     @property
     def is_cuda(self):
