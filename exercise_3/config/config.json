@@ -1,20 +1,28 @@
 [
   {
+    "abstract": true,
+    "creation_time": 1528757942.834108,
     "uuid": "c8fd7bd9-8193-49d3-b36f-cb037ef725b5",
     "config": {
+      "kernel_size": 3,
+      "val_interval": 240,
       "batch_size": 64,
-      "val_interval": 240
+      "num_filters": [
+        32
+      ],
+      "dropout": 0.0,
+      "hidden_dims": [
+        100
+      ]
     },
-    "name": "Default",
-    "abstract": true,
-    "creation_time": 1528757942.834108
+    "name": "Default"
   },
   {
-    "name": "Empty",
-    "base": "c8fd7bd9-8193-49d3-b36f-cb037ef725b5",
     "abstract": false,
-    "config": {},
     "uuid": "a28e6059-50fe-4e23-a95a-f8518ea667ed",
-    "creation_time": 1528758014.576262
+    "base": "c8fd7bd9-8193-49d3-b36f-cb037ef725b5",
+    "creation_time": 1528758014.576262,
+    "config": {},
+    "name": "Empty"
   }
 ]

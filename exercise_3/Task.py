@@ -18,13 +18,13 @@ class Task(TaskPlan.Task):
         self.train_loader = torch.utils.data.DataLoader(train_data, batch_size=self.preset.get_int('batch_size'), shuffle=True, num_workers=4)
         self.val_loader = torch.utils.data.DataLoader(val_data, batch_size=self.preset.get_int('batch_size'), shuffle=False, num_workers=4)
 
-        self.model = ClassificationCNN()
+        self.model = ClassificationCNN(num_filters=self.preset.get_list("num_filters"), kernel_size=self.preset.get_int("kernel_size"), hidden_dims=self.preset.get_list('hidden_dims'), dropout=self.preset.get_float('dropout'))
         self.solver = Solver()
         self.solver.set_model(self.model)
         self.train_iterator = iter(self.train_loader)
 
     def save(self, path):
-        self.model.save(path / "classification_cnn.model")
+        self.model.save(str(path / "classification_cnn.model"))
 
     def step(self, tensorboard_writer, current_iteration):
         try:
@@ -42,5 +42,5 @@ class Task(TaskPlan.Task):
             tensorboard_writer.add_summary(tf.Summary(value=[tf.Summary.Value(tag="accuracy/val", simple_value=val_acc)]), current_iteration)
 
     def load(self, path):
-        self.model = torch.load(path / "classification_cnn.model")
+        self.model = torch.load(str(path / "classification_cnn.model"))
         self.solver.set_model(self.model)
