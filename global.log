@@ -813,3 +813,25 @@
 [2018-06-12 01:22:40,098][INFO][general] The task "Exercise 3: Empty (try 0)" has been added to queue
 [2018-06-12 01:22:40,104][INFO][general] The task "Exercise 3: Empty (try 0)" has been started, beginning with iteration 10000
 [2018-06-12 01:38:03,944][INFO][general] The task "Exercise 3: Empty (try 0)" has been finished after 20000 finished iterations
+[2018-06-12 21:12:42,922][INFO][general] --------------------------------------------------
+[2018-06-12 21:14:34,877][INFO][general] Preset "3c1f" has been added
+[2018-06-12 21:14:39,179][INFO][general] The task "Exercise 3: 3c1f (try 0)" has been added to queue
+[2018-06-12 21:14:39,184][INFO][general] The task "Exercise 3: 3c1f (try 0)" has been started, beginning with iteration 0
+[2018-06-12 21:15:26,214][INFO][general] Starting tensorboard for project "Exercise 3"...
+[2018-06-12 21:38:49,016][INFO][general] The task "Exercise 3: 3c1f (try 0)" has been finished after 10000 finished iterations
+[2018-06-12 21:45:53,083][INFO][general] The task "Exercise 3: 3c1f (try 0)" has been added to queue
+[2018-06-12 21:45:53,087][INFO][general] The task "Exercise 3: 3c1f (try 0)" has been started, beginning with iteration 10000
+[2018-06-12 22:30:57,536][INFO][general] The task "Exercise 3: 3c1f (try 0)" has been finished after 30000 finished iterations
+[2018-06-12 22:43:52,585][INFO][general] The task "Exercise 3: 3c1f (try 0)" has been added to queue
+[2018-06-12 22:43:52,591][INFO][general] The task "Exercise 3: 3c1f (try 0)" has been started, beginning with iteration 0
+[2018-06-12 22:43:52,787][ERROR][general] The task "Exercise 3: 3c1f (try 0)" has been stopped due to an error after 0 finished iterations
+[2018-06-12 22:44:11,098][INFO][general] --------------------------------------------------
+[2018-06-12 22:44:22,187][INFO][general] The task "Exercise 3: 3c1f (try 0)" has been added to queue
+[2018-06-12 22:44:22,194][INFO][general] The task "Exercise 3: 3c1f (try 0)" has been started, beginning with iteration 0
+[2018-06-12 22:45:13,832][INFO][general] Starting tensorboard for project "Exercise 3"...
+[2018-06-12 22:55:27,359][INFO][general] The task "Exercise 3: 3c1f (try 0)" has been paused after 5160 finished iterations
+[2018-06-12 22:55:44,471][INFO][general] The task "Exercise 3: 3c1f (try 0)" has been added to queue
+[2018-06-12 22:55:44,477][INFO][general] The task "Exercise 3: 3c1f (try 0)" has been started, beginning with iteration 0
+[2018-06-13 01:32:14,551][INFO][general] The task "Exercise 3: 3c1f (try 0)" has been finished after 70000 finished iterations
+[2018-06-13 01:33:31,990][INFO][general] The task "Exercise 3: 3c1f (try 0)" has been added to queue
+[2018-06-13 01:33:31,997][INFO][general] The task "Exercise 3: 3c1f (try 0)" has been started, beginning with iteration 70000

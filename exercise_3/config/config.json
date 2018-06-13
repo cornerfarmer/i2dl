@@ -13,7 +13,11 @@
       "dropout": 0.0,
       "hidden_dims": [
         100
-      ]
+      ],
+      "rotate": 30,
+      "translate": 0.2,
+      "scale_min": 0.9,
+      "scale_max": 1.1
     },
     "name": "Default"
   },
@@ -24,5 +28,22 @@
     "creation_time": 1528758014.576262,
     "config": {},
     "name": "Empty"
+  },
+  {
+    "name": "3c1f",
+    "base": "c8fd7bd9-8193-49d3-b36f-cb037ef725b5",
+    "abstract": false,
+    "config": {
+      "num_filters": [
+        32,
+        64,
+        128
+      ],
+      "hidden_dims": [
+        64
+      ]
+    },
+    "uuid": "bf0f6d54-912a-4887-b2a1-0b0dbcbd02da",
+    "creation_time": 1528830874.877003
   }
 ]

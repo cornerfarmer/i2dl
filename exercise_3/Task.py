@@ -6,6 +6,7 @@ from exercise_code.solver import Solver
 from exercise_code.data_utils import get_CIFAR10_datasets
 import torch
 from torch.autograd import Variable
+from torchvision import transforms
 import pickle
 import tensorflow as tf
 
@@ -14,7 +15,13 @@ class Task(TaskPlan.Task):
     def __init__(self, preset, logger, subtask):
         super().__init__(preset, logger, subtask)
 
-        train_data, val_data, test_data, mean_image = get_CIFAR10_datasets()
+        transform_train = transforms.Compose([
+            transforms.ToPILImage(),
+            transforms.RandomAffine(self.preset.get_float('rotate'), (self.preset.get_float('translate'), self.preset.get_float('translate')), (self.preset.get_float('scale_min'), self.preset.get_float('scale_max'))),
+            transforms.ToTensor()
+        ])
+
+        train_data, val_data, test_data, mean_image = get_CIFAR10_datasets(transform=transform_train)
         self.train_loader = torch.utils.data.DataLoader(train_data, batch_size=self.preset.get_int('batch_size'), shuffle=True, num_workers=4)
         self.val_loader = torch.utils.data.DataLoader(val_data, batch_size=self.preset.get_int('batch_size'), shuffle=False, num_workers=4)
 
