@@ -237,9 +237,6 @@
   {
     "uuid": "fdae71c9-f2c6-4eaf-a1d2-534323239760",
     "config": {
-      "hidden_size": [
-        512
-      ],
       "update_rule": "adam",
       "dropout": 0.7
     },
@@ -299,13 +296,9 @@
   {
     "config": {
       "reg": 0.001,
-      "hidden_size": [
-        512
-      ],
       "dropout": 0.5,
       "learning_rate": 0.001,
-      "extract_features": true,
-      "update_rule": "sgd_momentum"
+      "extract_features": true
     },
     "name": "features",
     "uuid": "30a034c2-8e36-4a23-a7a3-03ca5ea0cff9",
@@ -315,9 +308,6 @@
     "uuid": "8588d14a-81e6-4527-bdae-5a50c5b2e9c6",
     "config": {
       "reg": 0.001,
-      "hidden_size": [
-        512
-      ],
       "update_rule": "adam",
       "dropout": 0.5
     },
@@ -333,7 +323,6 @@
         512,
         256
       ],
-      "update_rule": "sgd_momentum",
       "dropout": 0.5
     },
     "name": "update_rule: sgd_momentum - dropout: 0.5 - learning_rate: 0.01 - reg: 0.001 - hidden_size: [512, 256]",
@@ -347,7 +336,6 @@
       "hidden_size": [
         1024
       ],
-      "update_rule": "sgd_momentum",
       "dropout": 0.5
     },
     "name": "update_rule: sgd_momentum - dropout: 0.5 - learning_rate: 0.01 - reg: 0.001 - hidden_size: [1024]",
@@ -367,9 +355,6 @@
   {
     "uuid": "19177873-b329-4d6c-b084-c382d879a9c3",
     "config": {
-      "hidden_size": [
-        512
-      ],
       "update_rule": "adam"
     },
     "name": "update_rule: adam - hidden_size: [512]",
@@ -387,14 +372,10 @@
     "uuid": "9806e222-eb05-46f2-818a-05e536d376f5",
     "config": {
       "reg": 0.001,
-      "hidden_size": [
-        512
-      ],
       "dropout": 0.5,
       "learning_rate": 0.01,
       "extract_features": true,
-      "data_augmentation": true,
-      "update_rule": "sgd_momentum"
+      "data_augmentation": true
     },
     "name": "features + augm",
     "creation_time": 1528757846.21159
@@ -404,25 +385,17 @@
     "config": {
       "reg": 0.001,
       "batch_size": 64,
-      "hidden_size": [
-        512
-      ],
       "dropout": 0.5,
       "learning_rate": 0.01,
-      "extract_features": true,
-      "update_rule": "sgd_momentum"
+      "extract_features": true
     },
     "uuid": "1e08640e-fc3c-40c8-91f7-f5fd66631251",
     "creation_time": 1528757846.211599
   },
   {
     "config": {
-      "hidden_size": [
-        512
-      ],
       "learning_rate": 0.01,
-      "extract_features": true,
-      "update_rule": "sgd_momentum"
+      "extract_features": true
     },
     "uuid": "1efed865-4b1f-418b-b172-9a8dabdccd1b",
     "name": "hidden_size: [512] - learning_rate: 0.01 - extract_features: True - update_rule: sgd_momentum",
@@ -438,7 +411,6 @@
         128
       ],
       "dropout": 0.5,
-      "learning_rate": 0.0001,
       "extract_features": true,
       "update_rule": "adam"
     },
@@ -453,8 +425,7 @@
       ],
       "dropout": 0.5,
       "learning_rate": 0.01,
-      "extract_features": true,
-      "update_rule": "sgd_momentum"
+      "extract_features": true
     },
     "uuid": "94710bb0-7059-4d4d-9575-e09d1926fc5f",
     "name": "reg: 0.001 - hidden_size: [1024] - dropout: 0.5 - learning_rate: 0.01 - extract_features: True - update_rule: sgd_momentum",
@@ -469,8 +440,7 @@
       ],
       "dropout": 0.5,
       "learning_rate": 0.01,
-      "extract_features": true,
-      "update_rule": "sgd_momentum"
+      "extract_features": true
     },
     "uuid": "e300cb18-2349-4e5b-adae-1f3786b661d1",
     "creation_time": 1528757846.211635
