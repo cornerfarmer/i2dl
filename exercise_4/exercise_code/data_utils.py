@@ -53,9 +53,10 @@ def label_img_to_rgb(label_img):
 
 class SegmentationData(data.Dataset):
 
-    def __init__(self, image_paths_file, img_size=240):
+    def __init__(self, image_paths_file, transforms, transform_normalizer):
         self.root_dir_name = os.path.dirname(image_paths_file)
-        self.img_size = img_size
+        self.transforms = transforms
+        self.transform_normalizer = transform_normalizer
 
         with open(image_paths_file) as f:
             self.image_names = f.read().splitlines()
@@ -85,14 +86,15 @@ class SegmentationData(data.Dataset):
         img = Image.open(os.path.join(self.root_dir_name,
                                       'images',
                                       img_id + '.bmp')).convert('RGB')
-        center_crop = transforms.CenterCrop(self.img_size)
-        img = center_crop(img)
+
+        img = self.transforms(img)
         img = to_tensor(img)
+        img = self.transform_normalizer(img)
 
         target = Image.open(os.path.join(self.root_dir_name,
                                          'targets',
                                          img_id + '_GT.bmp'))
-        target = center_crop(target)
+        target = self.transforms(target)
         target = np.array(target, dtype=np.int64)
 
         target_labels = target[..., 0]

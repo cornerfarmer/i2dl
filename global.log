@@ -932,3 +932,90 @@
 [2018-06-20 10:59:51,396][INFO][general] The task "Exercise 3: road to 90 (try 1)" has been started, beginning with iteration 171938
 [2018-06-20 16:35:35,682][INFO][general] Starting tensorboard for project "Exercise 3"...
 [2018-06-20 17:25:32,824][INFO][general] The task "Exercise 3: road to 90 (try 1)" has been paused after 225827 finished iterations
+[2018-06-21 00:24:51,681][INFO][general] --------------------------------------------------
+[2018-06-21 00:25:17,696][INFO][general] Starting tensorboard for project "Exercise 1.1"...
+[2018-06-21 00:25:34,433][INFO][general] Starting tensorboard for project "Exercise 3"...
+[2018-06-21 00:26:08,366][INFO][general] The task "Exercise 3: road to 90 (try 1)" has been added to queue
+[2018-06-21 00:26:08,371][INFO][general] The task "Exercise 3: road to 90 (try 1)" has been started, beginning with iteration 225827
+[2018-06-21 00:26:22,953][INFO][general] The task "Exercise 3: road to 90 (try 1)" has been paused after 225847 finished iterations
+[2018-06-21 00:27:46,769][INFO][general] --------------------------------------------------
+[2018-06-21 00:27:49,900][INFO][general] The task "Exercise 3: road to 90 (try 1)" has been added to queue
+[2018-06-21 00:27:49,906][INFO][general] The task "Exercise 3: road to 90 (try 1)" has been started, beginning with iteration 225847
+[2018-06-21 00:28:37,827][INFO][general] Starting tensorboard for project "Exercise 1.1"...
+[2018-06-21 00:28:41,607][ERROR][general] The task "Exercise 3: road to 90 (try 1)" has been stopped due to an error after 225962 finished iterations
+[2018-06-21 00:28:52,868][INFO][general] --------------------------------------------------
+[2018-06-21 00:29:00,136][INFO][general] The task "Exercise 3: road to 90 (try 1)" has been added to queue
+[2018-06-21 00:29:00,142][INFO][general] The task "Exercise 3: road to 90 (try 1)" has been started, beginning with iteration 225962
+[2018-06-21 00:29:02,938][INFO][general] Starting tensorboard for project "Exercise 3"...
+[2018-06-21 00:32:25,925][INFO][general] The task "Exercise 3: road to 90 (try 1)" has been paused after 226410 finished iterations
+[2018-06-21 00:32:31,588][INFO][general] The task "Exercise 3: road to 90 (try 1)" has been added to queue
+[2018-06-21 00:32:31,595][INFO][general] The task "Exercise 3: road to 90 (try 1)" has been started, beginning with iteration 226410
+[2018-06-21 00:33:37,328][INFO][general] The task "Exercise 3: road to 90 (try 1)" has been paused after 226560 finished iterations
+[2018-06-21 00:36:26,841][INFO][general] --------------------------------------------------
+[2018-06-21 00:36:37,173][INFO][general] The task "Exercise 3: road to 90 (try 1)" has been added to queue
+[2018-06-21 00:36:37,181][INFO][general] The task "Exercise 3: road to 90 (try 1)" has been started, beginning with iteration 226560
+[2018-06-21 00:37:26,674][INFO][general] The task "Exercise 3: road to 90 (try 1)" has been paused after 226665 finished iterations
+[2018-06-21 00:37:31,032][INFO][general] --------------------------------------------------
+[2018-06-21 00:37:33,281][INFO][general] The task "Exercise 3: road to 90 (try 1)" has been added to queue
+[2018-06-21 00:37:33,286][INFO][general] The task "Exercise 3: road to 90 (try 1)" has been started, beginning with iteration 226665
+[2018-06-21 00:37:53,242][INFO][general] The task "Exercise 3: road to 90 (try 1)" has been paused after 226707 finished iterations
+[2018-06-21 00:38:14,021][INFO][general] --------------------------------------------------
+[2018-06-21 00:38:15,016][INFO][general] The task "Exercise 3: road to 90 (try 1)" has been added to queue
+[2018-06-21 00:38:15,022][INFO][general] The task "Exercise 3: road to 90 (try 1)" has been started, beginning with iteration 226707
+[2018-06-21 00:38:15,199][ERROR][general] The task "Exercise 3: road to 90 (try 1)" has been stopped due to an error after 226707 finished iterations
+[2018-06-21 00:38:41,230][INFO][general] --------------------------------------------------
+[2018-06-21 00:38:42,084][INFO][general] The task "Exercise 3: road to 90 (try 1)" has been added to queue
+[2018-06-21 00:38:42,089][INFO][general] The task "Exercise 3: road to 90 (try 1)" has been started, beginning with iteration 226707
+[2018-06-21 00:39:35,063][INFO][general] The task "Exercise 3: road to 90 (try 1)" has been paused after 226821 finished iterations
+[2018-06-21 00:40:27,993][INFO][general] --------------------------------------------------
+[2018-06-21 00:40:28,770][INFO][general] The task "Exercise 3: road to 90 (try 1)" has been added to queue
+[2018-06-21 00:40:28,776][INFO][general] The task "Exercise 3: road to 90 (try 1)" has been started, beginning with iteration 226821
+[2018-06-21 00:41:16,228][INFO][general] Starting tensorboard for project "Exercise 3"...
+[2018-06-21 02:01:11,416][INFO][general] The task "Exercise 3: road to 90 (try 1)" has been paused after 238041 finished iterations
+[2018-06-21 02:01:15,398][INFO][general] --------------------------------------------------
+[2018-06-21 02:06:26,235][INFO][general] Preset "Large All CNN" has been added
+[2018-06-21 02:08:29,122][INFO][general] --------------------------------------------------
+[2018-06-21 02:08:49,495][INFO][general] The task "Exercise 3: Large All CNN (try 0)" has been added to queue
+[2018-06-21 02:08:49,502][INFO][general] The task "Exercise 3: Large All CNN (try 0)" has been started, beginning with iteration 0
+[2018-06-21 02:08:49,699][ERROR][general] The task "Exercise 3: Large All CNN (try 0)" has been stopped due to an error after 0 finished iterations
+[2018-06-21 02:09:16,190][INFO][general] --------------------------------------------------
+[2018-06-21 02:09:27,156][INFO][general] The task "Exercise 3: Large All CNN (try 0)" has been added to queue
+[2018-06-21 02:09:27,161][INFO][general] The task "Exercise 3: Large All CNN (try 0)" has been started, beginning with iteration 0
+[2018-06-21 02:10:11,013][ERROR][general] The task "Exercise 3: Large All CNN (try 0)" has been stopped due to an error after 0 finished iterations
+[2018-06-21 02:10:44,268][INFO][general] The task "Exercise 3: Large All CNN (try 0)" has been added to queue
+[2018-06-21 02:10:44,280][INFO][general] The task "Exercise 3: Large All CNN (try 0)" has been started, beginning with iteration 0
+[2018-06-21 02:11:25,485][ERROR][general] The task "Exercise 3: Large All CNN (try 0)" has been stopped due to an error after 0 finished iterations
+[2018-06-21 02:19:03,946][INFO][general] The task "Exercise 3: Large All CNN (try 0)" has been added to queue
+[2018-06-21 02:19:03,955][INFO][general] The task "Exercise 3: Large All CNN (try 0)" has been started, beginning with iteration 0
+[2018-06-21 02:21:39,420][INFO][general] --------------------------------------------------
+[2018-06-21 02:25:59,007][INFO][general] The task "Exercise 3: Large All CNN (try 0)" has been added to queue
+[2018-06-21 02:25:59,019][INFO][general] The task "Exercise 3: Large All CNN (try 0)" has been started, beginning with iteration 0
+[2018-06-21 02:26:53,870][INFO][general] --------------------------------------------------
+[2018-06-21 02:27:02,357][INFO][general] The task "Exercise 3: Large All CNN (try 0)" has been added to queue
+[2018-06-21 02:27:02,363][INFO][general] The task "Exercise 3: Large All CNN (try 0)" has been started, beginning with iteration 0
+[2018-06-21 02:27:27,693][ERROR][general] The task "Exercise 3: Large All CNN (try 0)" has been stopped due to an error after 0 finished iterations
+[2018-06-21 02:28:34,247][INFO][general] --------------------------------------------------
+[2018-06-21 02:28:37,446][INFO][general] The task "Exercise 3: Large All CNN (try 0)" has been added to queue
+[2018-06-21 02:28:37,453][INFO][general] The task "Exercise 3: Large All CNN (try 0)" has been started, beginning with iteration 0
+[2018-06-21 02:31:23,738][INFO][general] --------------------------------------------------
+[2018-06-21 02:31:32,828][INFO][general] The task "Exercise 3: Large All CNN (try 0)" has been added to queue
+[2018-06-21 02:31:32,835][INFO][general] The task "Exercise 3: Large All CNN (try 0)" has been started, beginning with iteration 0
+[2018-06-21 02:38:28,526][INFO][general] --------------------------------------------------
+[2018-06-21 02:38:39,289][INFO][general] The task "Exercise 3: Large All CNN (try 0)" has been added to queue
+[2018-06-21 02:38:39,295][INFO][general] The task "Exercise 3: Large All CNN (try 0)" has been started, beginning with iteration 0
+[2018-06-21 02:39:18,015][INFO][general] --------------------------------------------------
+[2018-06-21 02:39:28,515][INFO][general] The task "Exercise 3: Large All CNN (try 1)" has been added to queue
+[2018-06-21 02:39:28,524][INFO][general] The task "Exercise 3: Large All CNN (try 1)" has been started, beginning with iteration 0
+[2018-06-21 02:39:33,731][ERROR][general] The task "Exercise 3: Large All CNN (try 1)" has been stopped due to an error after 0 finished iterations
+[2018-06-21 02:45:32,121][INFO][general] --------------------------------------------------
+[2018-06-21 02:45:35,042][INFO][general] The task "Exercise 3: Large All CNN (try 1)" has been added to queue
+[2018-06-21 02:45:35,054][INFO][general] The task "Exercise 3: Large All CNN (try 1)" has been started, beginning with iteration 0
+[2018-06-21 02:45:38,609][ERROR][general] The task "Exercise 3: Large All CNN (try 1)" has been stopped due to an error after 0 finished iterations
+[2018-06-21 02:47:09,221][INFO][general] --------------------------------------------------
+[2018-06-21 02:47:16,503][INFO][general] The task "Exercise 3: Large All CNN (try 1)" has been added to queue
+[2018-06-21 02:47:16,510][INFO][general] The task "Exercise 3: Large All CNN (try 1)" has been started, beginning with iteration 0
+[2018-06-21 02:47:59,460][INFO][general] The task "Exercise 3: Large All CNN (try 1)" has been paused after 7 finished iterations
+[2018-06-21 02:48:02,397][INFO][general] The task "Exercise 3: Large All CNN (try 1)" has been added to queue
+[2018-06-21 02:48:02,403][INFO][general] The task "Exercise 3: Large All CNN (try 1)" has been started, beginning with iteration 7
+[2018-06-21 02:48:29,530][INFO][general] Starting tensorboard for project "Exercise 3"...
+[2018-06-21 02:52:23,106][INFO][general] The task "Exercise 3: Large All CNN (try 1)" has been paused after 90 finished iterations
