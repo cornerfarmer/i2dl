@@ -813,3 +813,122 @@
 [2018-06-12 01:22:40,098][INFO][general] The task "Exercise 3: Empty (try 0)" has been added to queue
 [2018-06-12 01:22:40,104][INFO][general] The task "Exercise 3: Empty (try 0)" has been started, beginning with iteration 10000
 [2018-06-12 01:38:03,944][INFO][general] The task "Exercise 3: Empty (try 0)" has been finished after 20000 finished iterations
+[2018-06-12 21:12:42,922][INFO][general] --------------------------------------------------
+[2018-06-12 21:14:34,877][INFO][general] Preset "3c1f" has been added
+[2018-06-12 21:14:39,179][INFO][general] The task "Exercise 3: 3c1f (try 0)" has been added to queue
+[2018-06-12 21:14:39,184][INFO][general] The task "Exercise 3: 3c1f (try 0)" has been started, beginning with iteration 0
+[2018-06-12 21:15:26,214][INFO][general] Starting tensorboard for project "Exercise 3"...
+[2018-06-12 21:38:49,016][INFO][general] The task "Exercise 3: 3c1f (try 0)" has been finished after 10000 finished iterations
+[2018-06-12 21:45:53,083][INFO][general] The task "Exercise 3: 3c1f (try 0)" has been added to queue
+[2018-06-12 21:45:53,087][INFO][general] The task "Exercise 3: 3c1f (try 0)" has been started, beginning with iteration 10000
+[2018-06-12 22:30:57,536][INFO][general] The task "Exercise 3: 3c1f (try 0)" has been finished after 30000 finished iterations
+[2018-06-12 22:43:52,585][INFO][general] The task "Exercise 3: 3c1f (try 0)" has been added to queue
+[2018-06-12 22:43:52,591][INFO][general] The task "Exercise 3: 3c1f (try 0)" has been started, beginning with iteration 0
+[2018-06-12 22:43:52,787][ERROR][general] The task "Exercise 3: 3c1f (try 0)" has been stopped due to an error after 0 finished iterations
+[2018-06-12 22:44:11,098][INFO][general] --------------------------------------------------
+[2018-06-12 22:44:22,187][INFO][general] The task "Exercise 3: 3c1f (try 0)" has been added to queue
+[2018-06-12 22:44:22,194][INFO][general] The task "Exercise 3: 3c1f (try 0)" has been started, beginning with iteration 0
+[2018-06-12 22:45:13,832][INFO][general] Starting tensorboard for project "Exercise 3"...
+[2018-06-12 22:55:27,359][INFO][general] The task "Exercise 3: 3c1f (try 0)" has been paused after 5160 finished iterations
+[2018-06-12 22:55:44,471][INFO][general] The task "Exercise 3: 3c1f (try 0)" has been added to queue
+[2018-06-12 22:55:44,477][INFO][general] The task "Exercise 3: 3c1f (try 0)" has been started, beginning with iteration 0
+[2018-06-13 01:32:14,551][INFO][general] The task "Exercise 3: 3c1f (try 0)" has been finished after 70000 finished iterations
+[2018-06-13 01:33:31,990][INFO][general] The task "Exercise 3: 3c1f (try 0)" has been added to queue
+[2018-06-13 01:33:31,997][INFO][general] The task "Exercise 3: 3c1f (try 0)" has been started, beginning with iteration 70000
+[2018-06-16 20:01:48,961][INFO][general] --------------------------------------------------
+[2018-06-16 20:08:25,220][INFO][general] --------------------------------------------------
+[2018-06-16 20:13:35,826][INFO][general] Preset "keras" has been added
+[2018-06-16 20:18:03,129][INFO][general] --------------------------------------------------
+[2018-06-16 20:18:23,416][INFO][general] The task "Exercise 3: keras (try 0)" has been added to queue
+[2018-06-16 20:18:23,421][INFO][general] The task "Exercise 3: keras (try 0)" has been started, beginning with iteration 0
+[2018-06-16 20:18:23,623][ERROR][general] The task "Exercise 3: keras (try 0)" has been stopped due to an error after 0 finished iterations
+[2018-06-16 20:20:38,674][INFO][general] --------------------------------------------------
+[2018-06-16 20:20:52,617][INFO][general] The task "Exercise 3: keras (try 0)" has been added to queue
+[2018-06-16 20:20:52,623][INFO][general] The task "Exercise 3: keras (try 0)" has been started, beginning with iteration 0
+[2018-06-16 20:20:55,352][ERROR][general] The task "Exercise 3: keras (try 0)" has been stopped due to an error after 0 finished iterations
+[2018-06-16 20:21:34,741][INFO][general] The task "Exercise 3: keras (try 0)" has been added to queue
+[2018-06-16 20:21:34,746][INFO][general] The task "Exercise 3: keras (try 0)" has been started, beginning with iteration 0
+[2018-06-16 20:23:23,704][INFO][general] Starting tensorboard for project "Exercise 3"...
+[2018-06-17 03:15:35,835][INFO][general] The task "Exercise 3: keras (try 0)" has been paused after 70766 finished iterations
+[2018-06-17 11:57:30,340][INFO][general] --------------------------------------------------
+[2018-06-17 11:57:47,317][INFO][general] The task "Exercise 3: keras (try 0)" has been added to queue
+[2018-06-17 11:57:47,322][INFO][general] The task "Exercise 3: keras (try 0)" has been started, beginning with iteration 70766
+[2018-06-17 11:57:47,528][ERROR][general] The task "Exercise 3: keras (try 0)" has been stopped due to an error after 70766 finished iterations
+[2018-06-17 11:58:31,612][INFO][general] --------------------------------------------------
+[2018-06-17 11:58:54,742][INFO][general] The task "Exercise 3: keras (try 0)" has been added to queue
+[2018-06-17 11:58:54,756][INFO][general] The task "Exercise 3: keras (try 0)" has been started, beginning with iteration 70766
+[2018-06-17 11:58:54,882][ERROR][general] The task "Exercise 3: keras (try 0)" has been stopped due to an error after 70766 finished iterations
+[2018-06-17 11:59:35,749][INFO][general] --------------------------------------------------
+[2018-06-17 12:03:45,486][INFO][general] The task "Exercise 3: keras (try 0)" has been added to queue
+[2018-06-17 12:03:45,491][INFO][general] The task "Exercise 3: keras (try 0)" has been started, beginning with iteration 70766
+[2018-06-17 12:03:45,676][ERROR][general] The task "Exercise 3: keras (try 0)" has been stopped due to an error after 70766 finished iterations
+[2018-06-17 12:04:05,057][INFO][general] The task "Exercise 3: keras (try 0)" has been added to queue
+[2018-06-17 12:04:05,063][INFO][general] The task "Exercise 3: keras (try 0)" has been started, beginning with iteration 70766
+[2018-06-17 12:04:05,261][ERROR][general] The task "Exercise 3: keras (try 0)" has been stopped due to an error after 70766 finished iterations
+[2018-06-17 12:04:35,320][INFO][general] The task "Exercise 3: keras (try 0)" has been added to queue
+[2018-06-17 12:04:35,327][INFO][general] The task "Exercise 3: keras (try 0)" has been started, beginning with iteration 70766
+[2018-06-17 12:04:35,534][ERROR][general] The task "Exercise 3: keras (try 0)" has been stopped due to an error after 70766 finished iterations
+[2018-06-17 12:05:52,854][INFO][general] The task "Exercise 3: keras (try 0)" has been added to queue
+[2018-06-17 12:05:52,859][INFO][general] The task "Exercise 3: keras (try 0)" has been started, beginning with iteration 70766
+[2018-06-17 12:05:53,047][ERROR][general] The task "Exercise 3: keras (try 0)" has been stopped due to an error after 70766 finished iterations
+[2018-06-17 12:06:50,548][INFO][general] --------------------------------------------------
+[2018-06-17 12:06:52,940][INFO][general] The task "Exercise 3: keras (try 0)" has been added to queue
+[2018-06-17 12:06:52,945][INFO][general] The task "Exercise 3: keras (try 0)" has been started, beginning with iteration 70766
+[2018-06-17 12:06:53,120][ERROR][general] The task "Exercise 3: keras (try 0)" has been stopped due to an error after 70766 finished iterations
+[2018-06-17 12:09:22,789][INFO][general] --------------------------------------------------
+[2018-06-17 12:09:25,205][INFO][general] The task "Exercise 3: keras (try 0)" has been added to queue
+[2018-06-17 12:09:25,210][INFO][general] The task "Exercise 3: keras (try 0)" has been started, beginning with iteration 70766
+[2018-06-17 12:09:36,799][INFO][general] The task "Exercise 3: keras (try 0)" has been paused after 70795 finished iterations
+[2018-06-17 12:09:57,781][INFO][general] --------------------------------------------------
+[2018-06-17 12:09:59,606][INFO][general] The task "Exercise 3: keras (try 0)" has been added to queue
+[2018-06-17 12:09:59,611][INFO][general] The task "Exercise 3: keras (try 0)" has been started, beginning with iteration 70795
+[2018-06-17 12:10:02,767][INFO][general] Starting tensorboard for project "Exercise 3"...
+[2018-06-17 16:47:34,524][INFO][general] The task "Exercise 3: keras (try 0)" has been finished after 120000 finished iterations
+[2018-06-17 16:59:14,128][INFO][general] The task "Exercise 3: keras (try 0)" has been added to queue
+[2018-06-17 16:59:14,135][INFO][general] The task "Exercise 3: keras (try 0)" has been started, beginning with iteration 120000
+[2018-06-17 19:50:17,515][INFO][general] The task "Exercise 3: keras (try 0)" has been finished after 150000 finished iterations
+[2018-06-17 21:08:38,799][INFO][general] Preset "road to 90" has been added
+[2018-06-17 21:10:06,107][INFO][general] The task "Exercise 3: road to 90 (try 0)" has been added to queue
+[2018-06-17 21:10:06,112][INFO][general] The task "Exercise 3: road to 90 (try 0)" has been started, beginning with iteration 0
+[2018-06-17 21:10:06,287][ERROR][general] The task "Exercise 3: road to 90 (try 0)" has been stopped due to an error after 0 finished iterations
+[2018-06-17 21:10:34,508][INFO][general] Preset "road to 90" has been changed
+[2018-06-17 21:10:37,040][INFO][general] The task "Exercise 3: road to 90 (try 1)" has been added to queue
+[2018-06-17 21:10:37,045][INFO][general] The task "Exercise 3: road to 90 (try 1)" has been started, beginning with iteration 0
+[2018-06-18 02:19:12,153][INFO][general] The task "Exercise 3: road to 90 (try 1)" has been paused after 41608 finished iterations
+[2018-06-18 22:03:32,076][INFO][general] --------------------------------------------------
+[2018-06-18 22:18:03,022][INFO][general] --------------------------------------------------
+[2018-06-18 23:29:50,186][INFO][general] --------------------------------------------------
+[2018-06-18 23:30:09,729][INFO][general] The task "Exercise 3: road to 90 (try 1)" has been added to queue
+[2018-06-18 23:30:09,734][INFO][general] The task "Exercise 3: road to 90 (try 1)" has been started, beginning with iteration 41608
+[2018-06-18 23:30:09,961][ERROR][general] The task "Exercise 3: road to 90 (try 1)" has been stopped due to an error after 41608 finished iterations
+[2018-06-18 23:37:56,059][INFO][general] --------------------------------------------------
+[2018-06-18 23:39:09,695][INFO][general] --------------------------------------------------
+[2018-06-18 23:39:58,795][INFO][general] The task "Exercise 3: road to 90 (try 1)" has been added to queue
+[2018-06-18 23:39:58,801][INFO][general] The task "Exercise 3: road to 90 (try 1)" has been started, beginning with iteration 41608
+[2018-06-18 23:40:04,292][INFO][general] Starting tensorboard for project "Exercise 3"...
+[2018-06-19 01:55:45,714][INFO][general] The task "Exercise 3: road to 90 (try 1)" has been paused after 60335 finished iterations
+[2018-06-19 01:55:59,750][INFO][general] The task "Exercise 3: road to 90 (try 1)" has been added to queue
+[2018-06-19 01:55:59,756][INFO][general] The task "Exercise 3: road to 90 (try 1)" has been started, beginning with iteration 60335
+[2018-06-19 11:50:56,381][INFO][general] --------------------------------------------------
+[2018-06-19 11:51:14,664][INFO][general] The task "Exercise 3: road to 90 (try 1)" has been added to queue
+[2018-06-19 11:51:14,669][INFO][general] The task "Exercise 3: road to 90 (try 1)" has been started, beginning with iteration 60335
+[2018-06-19 22:45:02,447][INFO][general] The task "Exercise 3: road to 90 (try 1)" has been finished after 150000 finished iterations
+[2018-06-19 23:33:27,951][INFO][general] Starting tensorboard for project "Exercise 3"...
+[2018-06-19 23:55:46,892][INFO][general] The task "Exercise 3: road to 90 (try 1)" has been added to queue
+[2018-06-19 23:55:46,903][INFO][general] The task "Exercise 3: road to 90 (try 1)" has been started, beginning with iteration 150000
+[2018-06-20 01:42:01,906][INFO][general] The maximal running tasks has been changed to 2
+[2018-06-20 01:42:54,316][INFO][general] The task "Exercise 3: keras (try 0)" has been added to queue
+[2018-06-20 01:42:54,324][INFO][general] The task "Exercise 3: keras (try 0)" has been started, beginning with iteration 150000
+[2018-06-20 01:43:00,314][INFO][general] The task "Exercise 3: keras (try 0)" has been finished after 150001 finished iterations
+[2018-06-20 01:43:21,097][INFO][general] The task "Exercise 3: keras (try 0)" has been added to queue
+[2018-06-20 01:43:21,106][INFO][general] The task "Exercise 3: keras (try 0)" has been started, beginning with iteration 150001
+[2018-06-20 01:43:24,294][INFO][general] The task "Exercise 3: keras (try 0)" has been finished after 150002 finished iterations
+[2018-06-20 02:17:37,726][INFO][general] The task "Exercise 3: keras (try 0)" has been added to queue
+[2018-06-20 02:17:37,733][INFO][general] The task "Exercise 3: keras (try 0)" has been started, beginning with iteration 150002
+[2018-06-20 02:17:40,584][INFO][general] The task "Exercise 3: keras (try 0)" has been finished after 150003 finished iterations
+[2018-06-20 02:29:41,169][INFO][general] The task "Exercise 3: road to 90 (try 1)" has been paused after 171938 finished iterations
+[2018-06-20 10:59:36,055][INFO][general] --------------------------------------------------
+[2018-06-20 10:59:51,391][INFO][general] The task "Exercise 3: road to 90 (try 1)" has been added to queue
+[2018-06-20 10:59:51,396][INFO][general] The task "Exercise 3: road to 90 (try 1)" has been started, beginning with iteration 171938
+[2018-06-20 16:35:35,682][INFO][general] Starting tensorboard for project "Exercise 3"...
+[2018-06-20 17:25:32,824][INFO][general] The task "Exercise 3: road to 90 (try 1)" has been paused after 225827 finished iterations

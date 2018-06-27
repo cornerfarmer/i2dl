@@ -10,9 +10,18 @@
       "num_filters": [
         32
       ],
-      "dropout": 0.0,
+      "dropout": [
+        0.0
+      ],
       "hidden_dims": [
         100
+      ],
+      "rotate": 30,
+      "translate": 0.2,
+      "scale_min": 0.9,
+      "scale_max": 1.1,
+      "pool_toggle": [
+        true
       ]
     },
     "name": "Default"
@@ -24,5 +33,95 @@
     "creation_time": 1528758014.576262,
     "config": {},
     "name": "Empty"
+  },
+  {
+    "name": "3c1f",
+    "base": "c8fd7bd9-8193-49d3-b36f-cb037ef725b5",
+    "abstract": false,
+    "config": {
+      "num_filters": [
+        32,
+        64,
+        128
+      ],
+      "hidden_dims": [
+        64
+      ]
+    },
+    "uuid": "bf0f6d54-912a-4887-b2a1-0b0dbcbd02da",
+    "creation_time": 1528830874.877003
+  },
+  {
+    "name": "keras",
+    "base": "c8fd7bd9-8193-49d3-b36f-cb037ef725b5",
+    "config": {
+      "dropout": [
+        0,
+        0.25,
+        0,
+        0.25,
+        0.5
+      ],
+      "hidden_dims": [
+        512
+      ],
+      "num_filters": [
+        32,
+        32,
+        64,
+        64
+      ],
+      "pool_toggle": [
+        false,
+        true,
+        false,
+        true
+      ],
+      "flip": true,
+      "rotate": 0,
+      "scale_max": 1,
+      "scale_min": 1,
+      "translate": 0.1
+    },
+    "uuid": "c53148b8-7e4f-4a35-86ba-ff37847523b4",
+    "creation_time": 1529172815.826204
+  },
+  {
+    "name": "road to 90",
+    "base": "c8fd7bd9-8193-49d3-b36f-cb037ef725b5",
+    "config": {
+      "dropout": [
+        0,
+        0.2,
+        0,
+        0.3,
+        0,
+        0.4
+      ],
+      "hidden_dims": [],
+      "num_filters": [
+        32,
+        32,
+        64,
+        64,
+        128,
+        128
+      ],
+      "pool_toggle": [
+        false,
+        true,
+        false,
+        true,
+        false,
+        true
+      ],
+      "rotate": 15,
+      "scale_max": 1,
+      "scale_min": 1,
+      "translate": 0.1,
+      "flip": true
+    },
+    "uuid": "db1332a1-197f-414e-aaa4-04e210854061",
+    "creation_time": 1529262518.798777
   }
 ]

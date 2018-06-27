@@ -9,8 +9,8 @@ import pickle
 
 class SoftmaxTask(TaskPlan.Task):
 
-    def __init__(self, preset, logger, subtask):
-        super().__init__(preset, logger, subtask)
+    def __init__(self, preset, preset_pipe, logger, subtask):
+        super().__init__(preset, preset_pipe, logger, subtask)
         self.softmax = SoftmaxClassifier()
 
         X, y = load_CIFAR10('datasets/')

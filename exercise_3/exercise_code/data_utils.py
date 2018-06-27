@@ -122,15 +122,19 @@ class OverfitSampler(object):
 
 class CIFAR10Data(data.Dataset):
 
-    def __init__(self, X, y):
+    def __init__(self, X, y, transform):
         self.X = X
         self.y = y
+        self.transform = transform
 
     def __getitem__(self, index):
         img = self.X[index]
         label = self.y[index]
 
         img = torch.from_numpy(img)
+        if self.transform:
+            img = self.transform(img)
+
         return img, label
 
     def __len__(self):
@@ -186,7 +190,7 @@ def get_CIFAR10_data(num_training=48000, num_validation=1000, num_test=1000):
 
 
 def get_CIFAR10_datasets(num_training=48000, num_validation=1000,
-                         num_test=1000, dtype=np.float32):
+                         num_test=1000, dtype=np.float32, transform=None):
     """
     Load and preprocess the CIFAR-10 dataset.
     """
@@ -200,7 +204,7 @@ def get_CIFAR10_datasets(num_training=48000, num_validation=1000,
     X /= 255.0
     # Normalize the data: subtract the mean image
     mean_image = np.mean(X, axis=0)
-    X -= mean_image
+    #X -= mean_image
 
     # Subsample the data
     mask = range(num_training)
@@ -214,9 +218,9 @@ def get_CIFAR10_datasets(num_training=48000, num_validation=1000,
     X_test = X[mask]
     y_test = y[mask]
 
-    return (CIFAR10Data(X_train, y_train),
-            CIFAR10Data(X_val, y_val),
-            CIFAR10Data(X_test, y_test),
+    return (CIFAR10Data(X_train, y_train, transform),
+            CIFAR10Data(X_val, y_val, None),
+            CIFAR10Data(X_test, y_test, None),
             mean_image)
 
 

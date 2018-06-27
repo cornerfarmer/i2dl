@@ -16,8 +16,8 @@ class ClassificationCNN(nn.Module):
     """
 
     def __init__(self, input_dim=(3, 32, 32), num_filters=[32], kernel_size=7,
-                 stride_conv=1, weight_scale=0.001, pool=2, stride_pool=2, hidden_dims=[100],
-                 num_classes=10, dropout=0.0):
+                 stride_conv=1, weight_scale=0.001, pool=2, stride_pool=2, hidden_dims=[100], pool_toggle=[True],
+                 num_classes=10, dropout=[0.0], mean_image=None):
         """
         Initialize a new network.
 
@@ -53,14 +53,18 @@ class ClassificationCNN(nn.Module):
         ########################################################################
         self.conv = nn.ModuleList()
         input_filter = channels
-        for num_filter in num_filters:
+        for key, num_filter in enumerate(num_filters):
             self.conv.append(nn.Conv2d(input_filter, num_filter, kernel_size, padding=int(kernel_size / 2), stride=stride_conv))
             input_filter = num_filter
-            height //= pool
-            width //= pool
+
+            if pool_toggle[key]:
+                height //= pool
+                width //= pool
         self.pool = pool
         self.stride_pool = stride_pool
         self.dropout = dropout
+        self.pool_toggle = pool_toggle
+        self.mean_image = mean_image
 
         # an affine operation: y = Wx + b
         self.fc = nn.ModuleList()
@@ -82,6 +86,8 @@ class ClassificationCNN(nn.Module):
         Inputs:
         - x: PyTorch input Variable
         """
+        if x.min() < 0:
+            x += self.mean_image
 
         ########################################################################
         # TODO: Chain our previously initialized fully-connected neural        #
@@ -90,12 +96,20 @@ class ClassificationCNN(nn.Module):
         # transition from the spatial input image to the flat fully connected  #
         # layers.                                                              #
         ########################################################################
-        for conv in self.conv:
-            x = F.max_pool2d(F.relu(conv(x)), self.pool, stride=self.stride_pool)
+        drop_key = 0
+        for key, conv in enumerate(self.conv):
+            x = F.relu(conv(x))
+            if self.pool_toggle[key]:
+                x = F.max_pool2d(x, self.pool, stride=self.stride_pool)
+            x = F.dropout(x, self.dropout[drop_key], training=self.training)
+            drop_key += 1
+
         x = x.view(-1, self.num_flat_features(x))
-       # x = F.dropout(x, self.dropout)
+
         for fc in self.fc[:-1]:
             x = F.relu(fc(x))
+            x = F.dropout(x, self.dropout[drop_key], training=self.training)
+            drop_key += 1
         x = self.fc[-1](x)
         ########################################################################
         #                             END OF YOUR CODE                         #

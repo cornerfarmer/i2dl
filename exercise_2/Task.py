@@ -12,8 +12,8 @@ import matplotlib.pyplot as plt
 
 class Task(TaskPlan.Task):
 
-    def __init__(self, preset, logger, subtask):
-        super().__init__(preset, logger, subtask)
+    def __init__(self, preset, preset_pipe, logger, subtask):
+        super().__init__(preset, preset_pipe, logger, subtask)
 
         self.data = get_CIFAR10_data()
         x_train, y_train = data_augm(self.data['X_train'], self.data['y_train'], 2, self.preset.get_float('scale_min'), self.preset.get_float('scale_max'), self.preset.get_int('translate_max'))
