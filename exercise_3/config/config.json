@@ -4,11 +4,16 @@
     "creation_time": 1528757942.834108,
     "uuid": "c8fd7bd9-8193-49d3-b36f-cb037ef725b5",
     "config": {
-      "kernel_size": 3,
+      "kernel_size": [
+        3
+      ],
       "val_interval": 240,
       "batch_size": 64,
       "num_filters": [
         32
+      ],
+      "strides": [
+        1
       ],
       "dropout": [
         0.0
@@ -20,9 +25,12 @@
       "translate": 0.2,
       "scale_min": 0.9,
       "scale_max": 1.1,
+      "learning_rate": 0.0001,
       "pool_toggle": [
         true
-      ]
+      ],
+      "weight_decay": 0,
+      "flip": false
     },
     "name": "Default"
   },
@@ -123,5 +131,109 @@
     },
     "uuid": "db1332a1-197f-414e-aaa4-04e210854061",
     "creation_time": 1529262518.798777
+  },
+  {
+    "name": "Large All CNN",
+    "base": "c8fd7bd9-8193-49d3-b36f-cb037ef725b5",
+    "config": {
+      "dropout": [
+        0,
+        0,
+        0,
+        0.1,
+        0.1,
+        0,
+        0.2,
+        0.2,
+        0,
+        0.3,
+        0.3,
+        0,
+        0.4,
+        0.4,
+        0,
+        0.5,
+        0.5
+      ],
+      "hidden_dims": [],
+      "kernel_size": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        1
+      ],
+      "num_filters": [
+        32,
+        32,
+        32,
+        64,
+        64,
+        64,
+        96,
+        96,
+        96,
+        128,
+        128,
+        128,
+        160,
+        160,
+        160,
+        192,
+        192
+      ],
+      "pool_toggle": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "strides": [
+        1,
+        1,
+        2,
+        1,
+        1,
+        2,
+        1,
+        1,
+        2,
+        1,
+        1,
+        2,
+        1,
+        1,
+        2,
+        1,
+        1
+      ]
+    },
+    "uuid": "d1380926-adc3-48b9-a4c5-77fcef4803cd",
+    "creation_time": 1529539586.234171
   }
 ]

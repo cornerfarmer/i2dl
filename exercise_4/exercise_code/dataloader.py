@@ -3,6 +3,8 @@ import matplotlib.image as mpimg
 import pandas as pd
 import os
 import numpy as np
+from exercise_code.data_utils import get_keypoints
+from exercise_code.data_utils import get_image
 
 class FacialKeypointsDataset(Dataset):
     """Face Landmarks dataset."""
@@ -26,7 +28,7 @@ class FacialKeypointsDataset(Dataset):
         # TODO:                                                                #
         # Return the length of the dataset                                     #
         ########################################################################
-        pass
+        return len(self.key_pts_frame)
         ########################################################################
         #                             END OF YOUR CODE                         #
         ########################################################################
@@ -40,8 +42,7 @@ class FacialKeypointsDataset(Dataset):
         #         'keypoints': keypoints of shape [num_keypoints, 2]}          #
         # You can use mpimg.imread(image path) to read out image data          #
         ########################################################################
-        pass
-        
+        sample = {'image': np.expand_dims(get_image(idx, self.key_pts_frame), 0), 'keypoints': get_keypoints(idx, self.key_pts_frame)}
         ########################################################################
         #                             END OF YOUR CODE                         #
         ########################################################################

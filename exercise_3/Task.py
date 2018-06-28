@@ -15,25 +15,31 @@ class Task(TaskPlan.Task):
     def __init__(self, preset, preset_pipe, logger, subtask):
         super().__init__(preset, preset_pipe, logger, subtask)
 
-        filter = [
-            transforms.ToPILImage(),
-            transforms.RandomAffine(self.preset.get_float('rotate'), (self.preset.get_float('translate'), self.preset.get_float('translate')), (self.preset.get_float('scale_min'), self.preset.get_float('scale_max')))
-        ]
+        transform_arr = []
+        for i in range(2):
+            filter = [
+                transforms.ToPILImage()
+            ]
 
-        if self.preset.get_bool('flip'):
-            filter.append(transforms.RandomHorizontalFlip())
+            if i == 0:
+                filter.append(transforms.RandomAffine(self.preset.get_float('rotate'), (self.preset.get_float('translate'), self.preset.get_float('translate')), (self.preset.get_float('scale_min'), self.preset.get_float('scale_max'))))
 
-        filter.append(transforms.ToTensor())
+            if self.preset.get_bool('flip'):
+                filter.append(transforms.RandomHorizontalFlip())
 
-        transform_train = transforms.Compose(filter)
+            filter.append(transforms.Resize(size=126))
 
-        train_data, val_data, test_data, self.mean_image = get_CIFAR10_datasets(transform=transform_train)
+            filter.append(transforms.ToTensor())
+
+            transform_arr.append(transforms.Compose(filter))
+
+        train_data, val_data, test_data, self.mean_image = get_CIFAR10_datasets(transform_train=transform_arr[0], transform_val=transform_arr[1])
         self.train_loader = torch.utils.data.DataLoader(train_data, batch_size=self.preset.get_int('batch_size'), shuffle=True, num_workers=4)
         self.val_loader = torch.utils.data.DataLoader(val_data, batch_size=self.preset.get_int('batch_size'), shuffle=False, num_workers=4)
 
-        self.model = ClassificationCNN(num_filters=self.preset.get_list("num_filters"), kernel_size=self.preset.get_int("kernel_size"), hidden_dims=self.preset.get_list('hidden_dims'), pool_toggle=self.preset.get_list('pool_toggle'), dropout=self.preset.get_list('dropout'), mean_image=self.mean_image)
+        self.model = ClassificationCNN(num_filters=self.preset.get_list("num_filters"), kernel_size=self.preset.get_list("kernel_size"), hidden_dims=self.preset.get_list('hidden_dims'), pool_toggle=self.preset.get_list('pool_toggle'), dropout=self.preset.get_list('dropout'), strides=self.preset.get_list('strides'), mean_image=self.mean_image)
         self.logger.log(str(self.model))
-        self.solver = Solver()
+        self.solver = Solver(optim_args={'lr': self.preset.get_float("learning_rate"), 'weight_decay': self.preset.get_float("weight_decay")})
         self.solver.set_model(self.model)
         self.train_iterator = iter(self.train_loader)
 

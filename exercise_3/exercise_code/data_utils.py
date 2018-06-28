@@ -190,7 +190,7 @@ def get_CIFAR10_data(num_training=48000, num_validation=1000, num_test=1000):
 
 
 def get_CIFAR10_datasets(num_training=48000, num_validation=1000,
-                         num_test=1000, dtype=np.float32, transform=None):
+                         num_test=1000, dtype=np.float32, transform_train=None, transform_val=None):
     """
     Load and preprocess the CIFAR-10 dataset.
     """
@@ -218,8 +218,8 @@ def get_CIFAR10_datasets(num_training=48000, num_validation=1000,
     X_test = X[mask]
     y_test = y[mask]
 
-    return (CIFAR10Data(X_train, y_train, transform),
-            CIFAR10Data(X_val, y_val, None),
+    return (CIFAR10Data(X_train, y_train, transform_train),
+            CIFAR10Data(X_val, y_val, transform_val),
             CIFAR10Data(X_test, y_test, None),
             mean_image)
 

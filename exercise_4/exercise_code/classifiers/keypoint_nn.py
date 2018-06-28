@@ -19,7 +19,37 @@ class KeypointModel(nn.Module):
         # maxpooling layers, multiple conv layers, fully-connected layers, and other layers (such as dropout or      #
         # batch normalization) to avoid overfitting.                                                                 #
         ##############################################################################################################
-        pass
+        features = []
+        in_channel = 1
+        out_channel = 32
+        filter = 4
+        dropout = 0.1
+        for i in range(4):
+            features.append(nn.Conv2d(in_channel, out_channel, filter))
+            features.append(nn.ReLU())
+            features.append(nn.MaxPool2d(2))
+            features.append(nn.Dropout(dropout))
+
+            filter -= 1
+            in_channel = out_channel
+            out_channel *= 2
+            dropout += 0.1
+
+        self.features = nn.Sequential(*features)
+
+        classifier = []
+        in_features = 6400
+        for i in range(2):
+            classifier.append(nn.Linear(in_features, 1000))
+            classifier.append(nn.ReLU())
+            classifier.append(nn.Dropout(dropout))
+
+            dropout += 0.1
+            in_features = 1000
+
+        classifier.append(nn.Linear(in_features, 30))
+
+        self.classifier = nn.Sequential(*classifier)
         
         ########################################################################
         #                             END OF YOUR CODE                         #
@@ -32,8 +62,9 @@ class KeypointModel(nn.Module):
         # x = self.pool(F.relu(self.conv1(x)))                                                           #
         # a modified x, having gone through all the layers of your model, should be returned             #
         ##################################################################################################
-        pass
-       
+        x = self.features(x)
+        x = x.view(x.size(0), -1)
+        x = self.classifier(x)
         ########################################################################
         #                             END OF YOUR CODE                         #
         ########################################################################

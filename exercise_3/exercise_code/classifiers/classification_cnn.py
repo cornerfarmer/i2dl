@@ -15,9 +15,9 @@ class ClassificationCNN(nn.Module):
     channels.
     """
 
-    def __init__(self, input_dim=(3, 32, 32), num_filters=[32], kernel_size=7,
+    def __init__(self, input_dim=(3, 32, 32), num_filters=[32], kernel_size=[7],
                  stride_conv=1, weight_scale=0.001, pool=2, stride_pool=2, hidden_dims=[100], pool_toggle=[True],
-                 num_classes=10, dropout=[0.0], mean_image=None):
+                 num_classes=10, dropout=[0.0], mean_image=None, strides=[1]):
         """
         Initialize a new network.
 
@@ -54,7 +54,7 @@ class ClassificationCNN(nn.Module):
         self.conv = nn.ModuleList()
         input_filter = channels
         for key, num_filter in enumerate(num_filters):
-            self.conv.append(nn.Conv2d(input_filter, num_filter, kernel_size, padding=int(kernel_size / 2), stride=stride_conv))
+            self.conv.append(nn.Conv2d(input_filter, num_filter, kernel_size[key], padding=0, stride=strides[key]))
             input_filter = num_filter
 
             if pool_toggle[key]:
@@ -69,6 +69,7 @@ class ClassificationCNN(nn.Module):
         # an affine operation: y = Wx + b
         self.fc = nn.ModuleList()
         input_dim = input_filter * height * width
+        input_dim = 192
         for hidden_dim in hidden_dims:
             self.fc.append(nn.Linear(input_dim, hidden_dim))
             input_dim = hidden_dim
@@ -98,10 +99,12 @@ class ClassificationCNN(nn.Module):
         ########################################################################
         drop_key = 0
         for key, conv in enumerate(self.conv):
+            #print(key, x.size())
             x = F.relu(conv(x))
+            #print(key, x.size())
             if self.pool_toggle[key]:
                 x = F.max_pool2d(x, self.pool, stride=self.stride_pool)
-            x = F.dropout(x, self.dropout[drop_key], training=self.training)
+            #x = F.dropout(x, self.dropout[drop_key], training=self.training)
             drop_key += 1
 
         x = x.view(-1, self.num_flat_features(x))

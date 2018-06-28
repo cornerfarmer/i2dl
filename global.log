@@ -1019,3 +1019,27 @@
 [2018-06-21 02:48:02,403][INFO][general] The task "Exercise 3: Large All CNN (try 1)" has been started, beginning with iteration 7
 [2018-06-21 02:48:29,530][INFO][general] Starting tensorboard for project "Exercise 3"...
 [2018-06-21 02:52:23,106][INFO][general] The task "Exercise 3: Large All CNN (try 1)" has been paused after 90 finished iterations
+[2018-06-28 22:07:56,723][INFO][general] --------------------------------------------------
+[2018-06-28 22:08:08,939][INFO][general] Preset "empty" has been added
+[2018-06-28 22:10:32,781][INFO][general] --------------------------------------------------
+[2018-06-28 22:10:38,808][INFO][general] The task "Exercise 4.2: empty (try 0)" has been added to queue
+[2018-06-28 22:10:38,815][INFO][general] The task "Exercise 4.2: empty (try 0)" has been started, beginning with iteration 0
+[2018-06-28 22:10:41,679][ERROR][general] The task "Exercise 4.2: empty (try 0)" has been stopped due to an error after 0 finished iterations
+[2018-06-28 22:13:16,415][INFO][general] The task "Exercise 4.2: empty (try 0)" has been added to queue
+[2018-06-28 22:13:16,421][INFO][general] The task "Exercise 4.2: empty (try 0)" has been started, beginning with iteration 0
+[2018-06-28 22:13:19,796][ERROR][general] The task "Exercise 4.2: empty (try 0)" has been stopped due to an error after 0 finished iterations
+[2018-06-28 22:14:28,322][INFO][general] The task "Exercise 4.2: empty (try 0)" has been added to queue
+[2018-06-28 22:14:28,328][INFO][general] The task "Exercise 4.2: empty (try 0)" has been started, beginning with iteration 0
+[2018-06-28 22:14:31,988][ERROR][general] The task "Exercise 4.2: empty (try 0)" has been stopped due to an error after 0 finished iterations
+[2018-06-28 22:15:03,825][INFO][general] The task "Exercise 4.2: empty (try 0)" has been added to queue
+[2018-06-28 22:15:03,832][INFO][general] The task "Exercise 4.2: empty (try 0)" has been started, beginning with iteration 0
+[2018-06-28 22:15:16,552][INFO][general] Starting tensorboard for project "Exercise 4.2"...
+[2018-06-28 22:20:45,018][INFO][general] The task "Exercise 4.2: empty (try 0)" has been finished after 750 finished iterations
+[2018-06-28 22:20:45,860][INFO][general] The task "Exercise 4.2: empty (try 1)" has been added to queue
+[2018-06-28 22:20:45,866][INFO][general] The task "Exercise 4.2: empty (try 1)" has been started, beginning with iteration 0
+[2018-06-28 22:20:45,880][ERROR][general] The task "Exercise 4.2: empty (try 1)" has been stopped due to an error after 0 finished iterations
+[2018-06-28 22:20:55,572][INFO][general] The task "Exercise 4.2: empty (try 1)" has been added to queue
+[2018-06-28 22:20:55,578][INFO][general] The task "Exercise 4.2: empty (try 1)" has been started, beginning with iteration 0
+[2018-06-28 22:26:33,456][INFO][general] The task "Exercise 4.2: empty (try 1)" has been finished after 750 finished iterations
+[2018-06-28 22:28:21,857][INFO][general] The task "Exercise 4.2: empty (try 2)" has been added to queue
+[2018-06-28 22:28:21,862][INFO][general] The task "Exercise 4.2: empty (try 2)" has been started, beginning with iteration 0
