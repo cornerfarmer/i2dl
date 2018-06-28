@@ -1,21 +1,26 @@
 """SegmentationNN"""
 import torch
 import torch.nn as nn
-from torchvision import models
+from torchvision import models, transforms
 
 class SegmentationNN(nn.Module):
 
-    def __init__(self, num_classes=23):
+    def __init__(self, img_size, num_classes=23):
         super(SegmentationNN, self).__init__()
 
         ########################################################################
         #                             YOUR CODE                                #
         ########################################################################
 
-        self.model_ft = models.vgg16(pretrained=False)
+        self.model_ft = models.vgg16(pretrained=True)
+        next(iter(self.model_ft.features)).padding = [100, 100]
         self.full_conv = False
+        self.transform_to_fully_conv()
+        self.conv = nn.Conv2d(4096, num_classes, 1)
+        self.convtransp = nn.ConvTranspose2d(num_classes, num_classes, 64, stride=32, bias=False)
+        self.crop = transforms.CenterCrop(img_size)
 
-    def transform(self):
+    def transform_to_fully_conv(self):
         new_classifier = []
         filter_size = 7
         for module in self.model_ft.classifier.children():
@@ -24,7 +29,7 @@ class SegmentationNN(nn.Module):
                 filter_size = 1
             else:
                 new_classifier.append(module)
-        self.model_ft.classifier = nn.Sequential(*new_classifier)
+        self.model_ft.classifier = nn.Sequential(*new_classifier[:-1])
         self.full_conv = True
 
         #self.conv = nn.Conv2d(512, num_classes, 1)
@@ -59,22 +64,9 @@ class SegmentationNN(nn.Module):
         if not self.full_conv:
             x = x.view(x.size(0), -1)
         x = self.model_ft.classifier(x)
-        return x
-
-        x = self.model_ft.conv1(x)
-        x = self.model_ft.bn1(x)
-        x = self.model_ft.relu(x)
-        x = self.model_ft.maxpool(x)
-
-        x = self.model_ft.layer1(x)
-        x = self.model_ft.layer2(x)
-        x = self.model_ft.layer3(x)
-        x = self.model_ft.layer4(x)
-
-        x = self.model_ft.avgpool(x)
-
         x = self.conv(x)
-        x = self.upsample(x)
+        x = self.convtransp(x)
+        x = self.crop(x)
         ########################################################################
         #                             END OF YOUR CODE                         #
         ########################################################################
