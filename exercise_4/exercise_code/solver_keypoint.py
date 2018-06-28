@@ -34,6 +34,7 @@ class SolverKeyPoint(object):
         self.optim = self.optimF(model.parameters(), **self.optim_args)
 
     def validate(self, model, val_loader):
+        model.eval()
         loss_val = 0
         counter = 0
         for batch in val_loader:
@@ -41,6 +42,7 @@ class SolverKeyPoint(object):
             key_pts = batch['keypoints']
             key_pts = key_pts.view(key_pts.size(0), -1)
             key_pts = key_pts.type(torch.FloatTensor)
+            images = images.type(torch.FloatTensor)
 
             output = model(images)
             loss_val += self.loss_func(output, key_pts).item()
@@ -50,6 +52,7 @@ class SolverKeyPoint(object):
 
     def step(self, model, train_iterator):
         batch = next(train_iterator)
+        model.train()
 
         self.optim.zero_grad()
 
@@ -57,8 +60,8 @@ class SolverKeyPoint(object):
         key_pts = batch['keypoints']
         key_pts = key_pts.view(key_pts.size(0), -1)
         key_pts = key_pts.type(torch.FloatTensor)
-
         images = images.type(torch.FloatTensor)
+
         output = model(images)
 
         loss = self.loss_func(output, key_pts)
