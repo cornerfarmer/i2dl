@@ -55,7 +55,7 @@ class KeyPointTask(TaskPlan.Task):
         transformed_dataset = FacialKeypointsDataset(csv_file='datasets/training.csv', transform=data_transform)
 
         VAL_dataset = FacialKeypointsDataset(csv_file='datasets/val.csv', transform=data_transform)
-        self.val_loader = DataLoader(transformed_dataset, batch_size=self.preset.get_int("batch_size"), shuffle=True, num_workers=4)
+        self.val_loader = DataLoader(VAL_dataset, batch_size=self.preset.get_int("batch_size"), shuffle=True, num_workers=4)
 
         self.model = KeypointModel()
         self.logger.log(str(self.model))
@@ -85,5 +85,4 @@ class KeyPointTask(TaskPlan.Task):
 
     def load(self, path):
         self.model = torch.load(str(path / "keypoints_nn.model"))
-        self.model.mean_image = self.mean_image
         self.solver.set_model(self.model)
