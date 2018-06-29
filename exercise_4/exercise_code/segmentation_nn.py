@@ -2,6 +2,7 @@
 import torch
 import torch.nn as nn
 from torchvision import models, transforms
+import numpy as np
 
 class SegmentationNN(nn.Module):
 
@@ -16,9 +17,20 @@ class SegmentationNN(nn.Module):
         next(iter(self.model_ft.features)).padding = [100, 100]
         self.full_conv = False
         self.transform_to_fully_conv()
+        
+        for p in self.model_ft.features.parameters():
+            p.requires_grad = False
+            
+        for p in self.model_ft.classifier.parameters():
+            p.requires_grad = False
+        
         self.conv = nn.Conv2d(4096, num_classes, 1)
         self.convtransp = nn.ConvTranspose2d(num_classes, num_classes, 64, stride=32, bias=False)
-        self.crop = transforms.CenterCrop(img_size)
+        self.upsample = nn.Upsample(scale_factor=32)
+        self.crop = transforms.CenterCrop(img_size)     
+        
+    def parameters_to_train(self):
+        return [self.conv.parameters(), self.convtransp.parameters()]
 
     def transform_to_fully_conv(self):
         new_classifier = []
@@ -60,13 +72,19 @@ class SegmentationNN(nn.Module):
         ########################################################################
         #                             YOUR CODE                                #
         ########################################################################
+        orig_x = x
         x = self.model_ft.features(x)
         if not self.full_conv:
             x = x.view(x.size(0), -1)
         x = self.model_ft.classifier(x)
+        #print(x.size())
+        #print(np.argmax(x.detach().numpy()[0], 0))
         x = self.conv(x)
-        x = self.convtransp(x)
-        x = self.crop(x)
+        #x = self.convtransp(x)
+        x = self.upsample(x)
+        offset = (x.size()[2] - orig_x.size()[2]) // 2, (x.size()[3] - orig_x.size()[3]) // 2
+        #print(x.size(), orig_x.size(), offset)
+        x = x[:, :, offset[0]:offset[0] + orig_x.size()[2], offset[1]:offset[1] + orig_x.size()[3]].contiguous()
         ########################################################################
         #                             END OF YOUR CODE                         #
         ########################################################################
