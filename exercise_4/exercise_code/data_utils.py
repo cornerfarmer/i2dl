@@ -58,7 +58,7 @@ class SegmentationData(data.Dataset):
         self.transforms = transforms.Compose([
             # transforms.Resize(256),
             transforms.CenterCrop(224),
-            transforms.Resize(384, 0)
+            transforms.Scale(384, 0)
         ])
 
         self.transform_normalizer = transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
