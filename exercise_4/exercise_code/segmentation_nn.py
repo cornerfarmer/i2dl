@@ -13,22 +13,20 @@ class SegmentationNN(nn.Module):
         ########################################################################
         self.mode = mode
         self.img_size = img_size
-        if mode is 0 or mode is 1:
-            self.model_ft = models.vgg16(pretrained=True)
-            next(iter(self.model_ft.features)).padding = [100, 100]
-            self.full_conv = False
-            self.transform_to_fully_conv()
+        self.model_ft = models.vgg16(pretrained=True)
+        next(iter(self.model_ft.features)).padding = [100, 100]
+        self.full_conv = False
+        self.transform_to_fully_conv()
 
-            for p in self.model_ft.features.parameters():
-                p.requires_grad = False
+        for p in self.model_ft.features.parameters():
+            p.requires_grad = False
 
-            for p in self.model_ft.classifier.parameters():
-                p.requires_grad = False
+        for p in self.model_ft.classifier.parameters():
+            p.requires_grad = False
 
-        if mode is 0 or mode is 2:
-            self.conv = nn.Conv2d(4096, num_classes, 1)
-            self.convtransp = nn.ConvTranspose2d(num_classes, num_classes, 64, stride=32, bias=False)
-            self.upsample = nn.Upsample(scale_factor=32)
+        self.conv = nn.Conv2d(4096, num_classes, 1)
+        self.convtransp = nn.ConvTranspose2d(num_classes, num_classes, 64, stride=32, bias=False)
+        self.upsample = nn.Upsample(scale_factor=32)
 
     def transform_to_fully_conv(self):
         new_classifier = []
