@@ -45,6 +45,8 @@ class SolverKeyPoint(object):
             images = images.type(torch.FloatTensor)
 
             output = model(images)
+
+            key_pts[torch.isnan(key_pts)] = output[torch.isnan(key_pts)].detach()
             loss_val += self.loss_func(output, key_pts).item()
             counter += 1
 
@@ -63,6 +65,8 @@ class SolverKeyPoint(object):
         images = images.type(torch.FloatTensor)
 
         output = model(images)
+
+        key_pts[torch.isnan(key_pts)] = output[torch.isnan(key_pts)].detach()
 
         loss = self.loss_func(output, key_pts)
         loss.backward()
