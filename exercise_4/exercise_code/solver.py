@@ -15,7 +15,7 @@ class Solver(object):
                  loss_func=torch.nn.CrossEntropyLoss()):
         optim_args_merged = self.default_adam_args.copy()
         optim_args_merged.update(optim_args)
-        self.optim_args = optim_args_merged
+        self.optim_args = optim_args
         self.optim = optim
         self.loss_func = loss_func
 
@@ -30,7 +30,7 @@ class Solver(object):
         self.val_acc_history = []
         self.val_loss_history = []
 
-    def train(self, model, train_loader, val_loader, num_epochs=10, log_nth=0):
+    def train(self, model, train_loader, val_loader, num_epochs=10, log_nth=0, parameters=None):
         """
         Train a given model with the provided data.
 
@@ -41,7 +41,8 @@ class Solver(object):
         - num_epochs: total number of training epochs
         - log_nth: log training accuracy and loss every nth iteration
         """
-        optim = self.optim(model.parameters(), **self.optim_args)
+        print("training:", [p.size() for p in filter(lambda p: p.requires_grad, model.parameters())])
+        optim = self.optim(filter(lambda p: p.requires_grad, model.parameters()), **self.optim_args)
         self._reset_histories()
         iter_per_epoch = len(train_loader)
 

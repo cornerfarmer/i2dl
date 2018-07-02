@@ -1,24 +1,32 @@
 """SegmentationNN"""
 import torch
 import torch.nn as nn
-from torchvision import models, transforms
+from torchvision import models
 
 class SegmentationNN(nn.Module):
 
-    def __init__(self, img_size, num_classes=23):
+    def __init__(self, img_size, num_classes=23, mode=0):
         super(SegmentationNN, self).__init__()
 
         ########################################################################
         #                             YOUR CODE                                #
         ########################################################################
-
+        self.mode = mode
+        self.img_size = img_size
         self.model_ft = models.vgg16(pretrained=True)
         next(iter(self.model_ft.features)).padding = [100, 100]
         self.full_conv = False
         self.transform_to_fully_conv()
+
+        for p in self.model_ft.features.parameters():
+            p.requires_grad = False
+
+        for p in self.model_ft.classifier.parameters():
+            p.requires_grad = False
+
         self.conv = nn.Conv2d(4096, num_classes, 1)
         self.convtransp = nn.ConvTranspose2d(num_classes, num_classes, 64, stride=32, bias=False)
-        self.crop = transforms.CenterCrop(img_size)
+        self.upsample = nn.Upsample(scale_factor=32)
 
     def transform_to_fully_conv(self):
         new_classifier = []
@@ -60,13 +68,21 @@ class SegmentationNN(nn.Module):
         ########################################################################
         #                             YOUR CODE                                #
         ########################################################################
-        x = self.model_ft.features(x)
-        if not self.full_conv:
-            x = x.view(x.size(0), -1)
-        x = self.model_ft.classifier(x)
-        x = self.conv(x)
-        x = self.convtransp(x)
-        x = self.crop(x)
+        if self.mode is 0 or self.mode is 1:
+            x = self.model_ft.features(x)
+            if not self.full_conv:
+                x = x.view(x.size(0), -1)
+            x = self.model_ft.classifier(x)
+            #print(x.size())
+            #print(np.argmax(x.detach().numpy()[0], 0))
+
+        if self.mode is 0 or self.mode is 2:
+            x = self.conv(x)
+            #x = self.convtransp(x)
+            x = self.upsample(x)
+            offset = (x.size()[2] - self.img_size) // 2, (x.size()[3] - self.img_size) // 2
+            #print(x.size(), orig_x.size(), offset)
+            x = x[:, :, offset[0]:offset[0] + self.img_size, offset[1]:offset[1] + self.img_size].contiguous()
         ########################################################################
         #                             END OF YOUR CODE                         #
         ########################################################################

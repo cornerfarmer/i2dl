@@ -53,10 +53,17 @@ def label_img_to_rgb(label_img):
 
 class SegmentationData(data.Dataset):
 
-    def __init__(self, image_paths_file, transforms, transform_normalizer):
+    def __init__(self, image_paths_file):
+
+        self.transforms = transforms.Compose([
+            # transforms.Resize(256),
+            transforms.CenterCrop(224),
+            transforms.Scale(384, 0)
+        ])
+
+        self.transform_normalizer = transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
+
         self.root_dir_name = os.path.dirname(image_paths_file)
-        self.transforms = transforms
-        self.transform_normalizer = transform_normalizer
 
         with open(image_paths_file) as f:
             self.image_names = f.read().splitlines()
