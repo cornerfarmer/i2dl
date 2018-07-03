@@ -1,3 +1,5 @@
+import itertools
+
 import torch
 from torch.autograd import Variable
 import torch.nn as nn
@@ -9,6 +11,7 @@ class KeypointModel(nn.Module):
     def __init__(self):
         super(KeypointModel, self).__init__()
         self.num_models = 15
+        self.selected_model = -1
 
         ##############################################################################################################
         # TODO: Define all the layers of this CNN, the only requirements are:                                        #
@@ -60,6 +63,14 @@ class KeypointModel(nn.Module):
         #                             END OF YOUR CODE                         #
         ########################################################################
 
+    def parameters_for_model(self, i):
+        return itertools.chain(self.features[i].parameters(), self.classifiers[i].parameters())
+
+    def _forward_single(self, img, i):
+        x = self.features[i](img)
+        x = x.view(x.size(0), -1)
+        return self.classifiers[i](x)
+
     def forward(self, img):
         ##################################################################################################
         # TODO: Define the feedforward behavior of this model                                            #
@@ -67,12 +78,12 @@ class KeypointModel(nn.Module):
         # x = self.pool(F.relu(self.conv1(x)))                                                           #
         # a modified x, having gone through all the layers of your model, should be returned             #
         ##################################################################################################
-        out = torch.zeros([img.size()[0], 30])
-
-        for i in range(self.num_models):
-            x = self.features[i](img)
-            x = x.view(x.size(0), -1)
-            out[:, i*2:i*2+2] = self.classifiers[i](x)
+        if self.selected_model == -1:
+            out = torch.zeros([img.size()[0], 30])
+            for i in range(self.num_models):
+                out[:, i*2:i*2+2] = self._forward_single(img, i)
+        else:
+            return self._forward_single(img, self.selected_model)
         ########################################################################
         #                             END OF YOUR CODE                         #
         ########################################################################

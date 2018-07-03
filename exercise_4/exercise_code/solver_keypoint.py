@@ -3,7 +3,7 @@ import numpy as np
 
 import torch
 from torch.autograd import Variable
-
+import gc
 
 class SolverKeyPoint(object):
     default_adam_args = {"lr": 1e-4,
@@ -31,7 +31,9 @@ class SolverKeyPoint(object):
         self.val_loss_history = []
 
     def set_model(self, model):
-        self.optim = self.optimF(model.parameters(), **self.optim_args)
+        self.optim = []
+        for i in range(15):
+            self.optim.append(self.optimF(model.parameters_for_model(i), **self.optim_args))
 
     def validate(self, model, val_loader):
         model.eval()
@@ -52,25 +54,39 @@ class SolverKeyPoint(object):
 
         return loss_val / counter, 1.0 / (2 * (loss_val/len(val_loader)))
 
-    def step(self, model, train_iterator):
-        batch = next(train_iterator)
-        model.train()
+    def step(self, model, train_iterators, train_loaders):
+        losses = []
+        for i in range(len(train_iterators)):
+            try:
+                batch = next(train_iterators[i])
+            except StopIteration:
+                train_iterators[i] = iter(train_loaders[i])
+                batch = next(train_iterators[i])
+                print("restart")
 
-        self.optim.zero_grad()
+            model.train()
 
-        images = batch['image']
-        key_pts = batch['keypoints']
-        key_pts = key_pts.view(key_pts.size(0), -1)
-        key_pts = key_pts.type(torch.FloatTensor)
-        images = images.type(torch.FloatTensor)
+            self.optim[i].zero_grad()
 
-        output = model(images)
+            images = batch['image']
+            key_pts = batch['keypoints']
+            key_pts = key_pts.view(key_pts.size(0), -1)
+            key_pts = key_pts.type(torch.FloatTensor)
+            images = images.type(torch.FloatTensor)
+            #print(images.size())
 
-        key_pts[torch.isnan(key_pts)] = output[torch.isnan(key_pts)].detach()
+            model.selected_model = i
+            output = model(images)
+            model.selected_model = -1
 
-        loss = self.loss_func(output, key_pts)
-        loss.backward()
+            #key_pts[torch.isnan(key_pts)] = output[torch.isnan(key_pts)].detach()
 
-        self.optim.step()
+            loss = self.loss_func(output, key_pts)
+            loss.backward()
 
-        return loss.item(), 1.0 / (2 * (loss.item()))
+            self.optim[i].step()
+
+            losses.append(loss.item())
+
+        loss_sum = np.sum(losses) / 15
+        return loss_sum, 1.0 / (2 * loss_sum), losses

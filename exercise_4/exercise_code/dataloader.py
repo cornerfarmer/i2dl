@@ -9,7 +9,7 @@ from exercise_code.data_utils import get_image
 class FacialKeypointsDataset(Dataset):
     """Face Landmarks dataset."""
 
-    def __init__(self, csv_file, transform=None):
+    def __init__(self, csv_file, transform=None, index=-1):
         """
         Args:
             csv_file (string): Path to the csv file with annotations.
@@ -19,7 +19,12 @@ class FacialKeypointsDataset(Dataset):
                 on a sample.
         """
         self.key_pts_frame = pd.read_csv(csv_file)
-        self.key_pts_frame.dropna(inplace=True)
+        if index != -1:
+            cols = list(self.key_pts_frame.columns)[:-1]
+            cols.remove(cols[index * 2])
+            cols.remove(cols[index * 2 ])
+            self.key_pts_frame = self.key_pts_frame.drop(columns=cols)
+            self.key_pts_frame.dropna(inplace=True)
         self.key_pts_frame.reset_index(drop=True, inplace=True)
         self.transform = transform
 

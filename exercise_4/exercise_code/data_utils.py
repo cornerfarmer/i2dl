@@ -257,5 +257,5 @@ def get_image(idx, key_pts_frame):
     
 def get_keypoints(idx, key_pts_frame):
     keypoint_cols = list(key_pts_frame.columns)[:-1]
-    return key_pts_frame.iloc[idx][keypoint_cols].values.reshape((15, 2))
+    return key_pts_frame.iloc[idx][keypoint_cols].values
   
